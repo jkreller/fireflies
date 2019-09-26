@@ -63,7 +63,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\DraggableObject.cs" />
+    <Compile Include="Assets\Scripts\Fireflies.cs" />
+    <Compile Include="Assets\Scripts\FirefliesOld.cs" />
+    <Compile Include="Assets\Scripts\FirefliesPartOld.cs" />
+    <Compile Include="Assets\Scripts\Helper\FirefliesMerger.cs" />
+    <Compile Include="Assets\Scripts\Player.cs" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>/Users/jkreller/UnityProjects/Fireflies/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
