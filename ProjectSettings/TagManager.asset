@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Fireflies
   - Elevator
+  - AttractBall
   layers:
   - Default
   - TransparentFX

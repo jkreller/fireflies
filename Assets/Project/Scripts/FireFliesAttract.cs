@@ -4,15 +4,9 @@ using UnityEngine;
 
 public class FireFliesAttract : MonoBehaviour
 {
+    public bool follow;
     private Vector3 mOffset;
     private float mZCoord;
-
-    void OnMouseDown()
-    {
-        mZCoord = Camera.main.WorldToScreenPoint(gameObject.transform.position).z;
-        mOffset = gameObject.transform.position - GetMouseAsWorldPoint();
-        transform.position = GetMouseAsWorldPoint() + mOffset;
-    }
 
     private Vector3 GetMouseAsWorldPoint()
     {
@@ -21,9 +15,15 @@ public class FireFliesAttract : MonoBehaviour
         return Camera.main.ScreenToWorldPoint(mousePoint);
     }
 
-    void OnMouseDrag()
+    void Update()
     {
-        transform.position = GetMouseAsWorldPoint() + mOffset;
+        if(follow){
+            Vector3 temp = Input.mousePosition;
+            temp.z = Input.mousePosition.z+1.5f; 
+            this.transform.position = Camera.main.ScreenToWorldPoint(temp);
+        }
+        if(Input.GetMouseButtonUp(0)){
+            follow = false;
+        }
     }
-
 }

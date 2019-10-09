@@ -1,12 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 // Script for handling player input
 public class Player : Movable
 {
     // References
     private Fireflies firstFireflies;
+    private FireFliesAttract fireFliesAttract;
 
     // Logic fields
     private float rotationX;
@@ -14,7 +16,9 @@ public class Player : Movable
 
     private void Awake()
     {
-        firstFireflies = GameObject.Find("Fireflies").GetComponent<Fireflies>();
+            //firstFireflies = GameObject.Find("Fireflies").GetComponent<Fireflies>();
+            fireFliesAttract = GameObject.Find("AttractBall").GetComponent<FireFliesAttract>();
+
     }
 
     new void Update()
@@ -39,6 +43,11 @@ public class Player : Movable
                         Elevator elevator = hit.transform.GetComponentInParent<Elevator>();
                         elevator.OpenDoors();
                         break;
+                    case "AttractBall":
+                        fireFliesAttract.follow = true;
+                        Debug.Log("klicken");
+                        break;
+                       
                 }
             }
         }

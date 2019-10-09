@@ -5,8 +5,7 @@ using UnityEngine;
 public class FirefliesFollow : MonoBehaviour
 {
     public Transform target;
-    float speed = 2f;
-    const float EPSILON = 0.1f;
+    public float speed = 0.01f;
 
 	private void Update()
 	{
