@@ -2,14 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+// Script for elevator logic
 public class Elevator : MonoBehaviour
 {
     // Options
-    private float playerOffsetZ = 1;
+    [SerializeField] private float playerOffsetZ = 1;
+    [SerializeField] private bool skipElevator;
 
     // References
     private Animator animator;
     private Player player;
+    private GameObject room;
 
     // Logic fields
     private bool attachPlayer;
@@ -18,10 +21,24 @@ public class Elevator : MonoBehaviour
     void Awake()
     {
         animator = GetComponentInParent<Animator>();
+        room = GameObject.Find("Room");
+        player = GameObject.Find("Player").GetComponent<Player>();
+    }
+
+    void Start()
+    {
+        if (skipElevator)
+        {
+            player.transform.position = transform.position + Vector3.down * 31.9f + Vector3.forward * playerOffsetZ;
+        } else
+        {
+            ToggleRoom(0);
+        }
     }
 
     void Update()
     {
+        // Attach player to elevator
         if (attachPlayer)
         {
             Vector3 playerPos = player.transform.position;
@@ -29,15 +46,27 @@ public class Elevator : MonoBehaviour
         }
     }
 
-    public void OpenDoors(Player player)
+    public void OpenDoors()
     {
         SetAnimState(1);
-        this.player = player;
     }
 
     public void FinishOpening()
     {
         player.StartMovement(new Vector3(transform.position.x, player.transform.position.y, transform.position.z + playerOffsetZ), AfterPlayerMovement);
+    }
+
+    public void UnattachPlayer()
+    {
+        attachPlayer = false;
+    }
+
+    public void ToggleRoom(int active)
+    {
+        foreach (Transform child in room.GetComponentInChildren<Transform>())
+        {
+            child.gameObject.SetActive(active == 0 ? false : true);
+        }
     }
 
     private void AfterPlayerMovement()

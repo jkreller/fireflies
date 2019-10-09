@@ -12,13 +12,10 @@ public class FireFliesAttract : MonoBehaviour
         mZCoord = Camera.main.WorldToScreenPoint(gameObject.transform.position).z;
         mOffset = gameObject.transform.position - GetMouseAsWorldPoint();
         transform.position = GetMouseAsWorldPoint() + mOffset;
-
     }
 
     private Vector3 GetMouseAsWorldPoint()
     {
-
-
         Vector3 mousePoint = Input.mousePosition;
         mousePoint.z = mZCoord;
         return Camera.main.ScreenToWorldPoint(mousePoint);

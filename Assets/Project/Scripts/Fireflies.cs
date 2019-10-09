@@ -3,11 +3,54 @@ using System.Collections.Generic;
 using UnityEngine;
 
 // Script for fireflies particle system
-public class Fireflies : MonoBehaviour
+public class Fireflies : Movable
 {
     // Options
-    [SerializeField] private float seperationDistance = 2.5f;
-    [SerializeField] private float minScale = 0.5f;
+    [Header("Fireflies Options")]
+    [SerializeField] private bool initializeToLamp = true;
+
+    // References
+    private Animator animator;
+
+    // Logic fields
+    private float seperationDistance;
+    private static float minScale; // one fourth of initial size, for example 0.5 if initial scale is 2
+    private bool isInitialFireflies;
+
+    void Start()
+    {
+        float avrgScale = (transform.localScale.x + transform.localScale.y + transform.localScale.z) / 3;
+
+        animator = GetComponent<Animator>();
+        SetAnimState(3);
+
+        seperationDistance = avrgScale;
+
+        // If is inital fireflies object
+        if (transform.name == "Fireflies")
+        {
+            isInitialFireflies = true;
+            minScale = avrgScale * 0.25f;
+        }
+
+        // Initialize to lamp
+        if (initializeToLamp && isInitialFireflies)
+        {
+            GameObject lamp = GameObject.Find("Lamp");
+            transform.position = lamp.transform.position + Vector3.up * 0.1f;
+            SetAnimState(1);
+        }
+    }
+
+    void OnEnable()
+    {
+        // On first enable - logic for diabeling and enabeling because of elevator
+        if (initializeToLamp && isInitialFireflies)
+        {
+            SetAnimState(1);
+            initializeToLamp = false;
+        }
+    }
 
     private void OnTriggerEnter(Collider other)
     {
@@ -24,7 +67,8 @@ public class Fireflies : MonoBehaviour
     // Seperate one fireflies object into two objects of half size
     public void Seperate(Vector3 playerPosition)
     {
-        if ((transform.localScale * 0.5f).sqrMagnitude >= (new Vector3(0.5f, 0.5f, 0.5f)).sqrMagnitude)
+        // Check if is big enough to seperate
+        if ((transform.localScale * 0.5f).sqrMagnitude >= (new Vector3(minScale, minScale, minScale)).sqrMagnitude)
         {
             Vector3 normalizedDirection = (playerPosition - transform.position).normalized;
 
@@ -43,6 +87,12 @@ public class Fireflies : MonoBehaviour
         }
     }
 
+    public void Activate(Vector3 playerPosition)
+    {
+        SetAnimState(2);
+        StartMovement(playerPosition + Vector3.back);
+    }
+
     // Merge fireflies together with another one into one fireflies object with double size
     private void Merge(GameObject other)
     {
@@ -54,5 +104,10 @@ public class Fireflies : MonoBehaviour
 
         Destroy(gameObject);
         Destroy(other);
+    }
+
+    private void SetAnimState(int state)
+    {
+        animator.SetInteger("AnimState", state);
     }
 }

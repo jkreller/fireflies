@@ -3,23 +3,24 @@ using System.Collections.Generic;
 using UnityEngine;
 
 // Script for handling player input
-public class Player : MonoBehaviour
+public class Player : Movable
 {
-    // Options
-    [SerializeField] private float speed = 2;
-    [SerializeField] private float movementSpeed = 1;
+    // References
+    private Fireflies firstFireflies;
 
     // Logic fields
     private float rotationX;
     private float rotationY;
-    private bool isMoving;
-    private Vector3 targetPosition;
-    private MovingCallBack movingCallBack;
 
-    public delegate void MovingCallBack();
-
-    void Update()
+    private void Awake()
     {
+        firstFireflies = GameObject.Find("Fireflies").GetComponent<Fireflies>();
+    }
+
+    new void Update()
+    {
+        base.Update();
+
         // On left mouse click
         if (Input.GetMouseButtonDown(0))
         {
@@ -36,7 +37,7 @@ public class Player : MonoBehaviour
                         break;
                     case "Elevator":
                         Elevator elevator = hit.transform.GetComponentInParent<Elevator>();
-                        elevator.OpenDoors(this);
+                        elevator.OpenDoors();
                         break;
                 }
             }
@@ -47,33 +48,9 @@ public class Player : MonoBehaviour
         rotationY -= speed * Input.GetAxis("Mouse Y");
         transform.eulerAngles = new Vector3(rotationY, rotationX, 0);
 
-        // Move player if isset
-        if (isMoving)
+        if (Input.GetKey("s"))
         {
-            Move();
-        }
-    }
-
-    public void StartMovement(Vector3 targetPos, MovingCallBack movingCallBack = null)
-    {
-        targetPosition = targetPos;
-        isMoving = true;
-        this.movingCallBack = movingCallBack;
-    }
-
-    private void Move()
-    {
-        if (Vector3.SqrMagnitude(transform.position - targetPosition) > 0.01)
-        {
-            transform.position = Vector3.Lerp(transform.position, targetPosition, movementSpeed * Time.deltaTime);
-        } else
-        {
-            isMoving = false;
-            if (movingCallBack != null)
-            {
-                movingCallBack();
-                movingCallBack = null;
-            }
+            firstFireflies.Activate(transform.position);
         }
     }
 }
