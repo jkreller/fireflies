@@ -17,6 +17,10 @@ public class Fireflies : Movable
     private static float minScale; // one fourth of initial size, for example 0.5 if initial scale is 2
     private bool isInitialFireflies;
 
+
+    //Fireflies follow
+    FireFliesAttract fireFliesAttract;
+
     void Start()
     {
         float avrgScale = (transform.localScale.x + transform.localScale.y + transform.localScale.z) / 3;
@@ -40,7 +44,12 @@ public class Fireflies : Movable
             transform.position = lamp.transform.position + Vector3.up * 0.1f;
             SetAnimState(1);
         }
+
+        //get attractBall
+        fireFliesAttract = GameObject.Find("AttractBall").GetComponent<FireFliesAttract>();
     }
+
+
 
     void OnEnable()
     {
@@ -60,6 +69,20 @@ public class Fireflies : Movable
             if (FirefliesMerger.Instance.RequestMerging())
             {
                 Merge(other.gameObject);
+            }
+        }
+    }
+
+    void OnTriggerStay(Collider other){
+        // follow attractBall
+        if (other.gameObject.CompareTag("AttractBall"))
+        {
+            if (fireFliesAttract.follow)
+            {
+                if (Input.GetKey("f"))
+                {
+                    StartMovement(other.gameObject.transform.position);
+                }
             }
         }
     }

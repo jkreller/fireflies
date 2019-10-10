@@ -65,7 +65,6 @@
     <Compile Include="Assets\Project\Scripts\Elevator.cs" />
     <Compile Include="Assets\Project\Scripts\Fireflies.cs" />
     <Compile Include="Assets\Project\Scripts\FireFliesAttract.cs" />
-    <Compile Include="Assets\Project\Scripts\FirefliesFollow.cs" />
     <Compile Include="Assets\Project\Scripts\Helper\FirefliesMerger.cs" />
     <Compile Include="Assets\Project\Scripts\Movable.cs" />
     <Compile Include="Assets\Project\Scripts\Player.cs" />

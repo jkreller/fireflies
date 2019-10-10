@@ -45,7 +45,6 @@ public class Player : Movable
                         break;
                     case "AttractBall":
                         fireFliesAttract.follow = true;
-                        Debug.Log("klicken");
                         break;
                        
                 }
