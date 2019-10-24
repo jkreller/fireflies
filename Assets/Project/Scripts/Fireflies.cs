@@ -73,17 +73,13 @@ public class Fireflies : Movable
         }
     }
 
-    void OnTriggerStay(Collider other){
-        // follow attractBall
-        if (other.gameObject.CompareTag("AttractBall"))
+    void OnTriggerStay(Collider other) {
+        // Follow fire flies attract object
+        FireFliesAttract fireFliesAttract = other.gameObject.GetComponent<FireFliesAttract>();
+        print(fireFliesAttract.shouldFollow);
+        if (fireFliesAttract && fireFliesAttract.shouldFollow)
         {
-            if (fireFliesAttract.follow)
-            {
-                if (Input.GetKey("f"))
-                {
-                    StartMovement(other.gameObject.transform.position);
-                }
-            }
+            StartMovement(other.gameObject.transform.position);
         }
     }
 

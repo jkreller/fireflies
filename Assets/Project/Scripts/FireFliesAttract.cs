@@ -1,29 +1,43 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.XR;
+using Valve.VR;
 
-public class FireFliesAttract : MonoBehaviour
+public class FireFliesAttract : ControllerComponent
 {
-    public bool follow;
-    private Vector3 mOffset;
-    private float mZCoord;
+    // References
+    private Fireflies fireflies;
+    [SerializeField] private SteamVR_Action_Boolean grabPinchAction;
 
-    private Vector3 GetMouseAsWorldPoint()
+    // Logic fields
+    [System.NonSerialized] public bool moveWithMouse;
+    [System.NonSerialized] public bool shouldFollow;
+
+    private void Awake()
     {
-        Vector3 mousePoint = Input.mousePosition;
-        mousePoint.z = mZCoord;
-        return Camera.main.ScreenToWorldPoint(mousePoint);
+        fireflies = GameObject.Find("Fireflies").GetComponent<Fireflies>();
     }
 
     void Update()
     {
-        if(follow){
+        if (XRDevice.isPresent)
+        {
+            if (grabPinchAction.GetStateDown(handType))
+            {
+                shouldFollow = true;
+            } else if (grabPinchAction.GetLastStateUp(handType))
+            {
+                shouldFollow = false;
+            }
+        } else if (moveWithMouse)
+        {
             Vector3 temp = Input.mousePosition;
-            temp.z = Input.mousePosition.z+1.5f; 
+            temp.z = Input.mousePosition.z + 1.5f;
             this.transform.position = Camera.main.ScreenToWorldPoint(temp);
-        }
-        if(Input.GetMouseButtonUp(0)){
-            follow = false;
+        } else
+        {
+            shouldFollow = false;
         }
     }
 }

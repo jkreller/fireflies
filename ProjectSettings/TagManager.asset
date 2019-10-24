@@ -7,6 +7,7 @@ TagManager:
   - Fireflies
   - Elevator
   - AttractBall
+  - Controller
   layers:
   - Default
   - TransparentFX
@@ -17,8 +18,8 @@ TagManager:
   - 
   - 
   - Ambient-Light
-  - 
-  - 
+  - Teleportation
+  - Grabbing
   - 
   - 
   - 
