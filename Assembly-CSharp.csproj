@@ -62,6 +62,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Project\Scripts\bubble.cs" />
+    <Compile Include="Assets\Project\Scripts\cageDoor.cs" />
     <Compile Include="Assets\Project\Scripts\Controller.cs" />
     <Compile Include="Assets\Project\Scripts\ControllerComponent.cs" />
     <Compile Include="Assets\Project\Scripts\Elevator.cs" />
@@ -72,6 +74,7 @@
     <Compile Include="Assets\Project\Scripts\LaserPointer.cs" />
     <Compile Include="Assets\Project\Scripts\Movable.cs" />
     <Compile Include="Assets\Project\Scripts\Player.cs" />
+    <Compile Include="Assets\Project\Scripts\puzzle.cs" />
     <Compile Include="Assets\Project\Scripts\Wheel\button.cs" />
     <Compile Include="Assets\Project\Scripts\Wheel\WheelRiddle.cs" />
     <Compile Include="Assets\Project\Scripts\Wheel\WheelScript.cs" />
