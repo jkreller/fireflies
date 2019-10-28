@@ -62,12 +62,15 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Project\Scripts\bubble.cs" />
+    <Compile Include="Assets\Project\Scripts\cageDoor.cs" />
     <Compile Include="Assets\Project\Scripts\Elevator.cs" />
     <Compile Include="Assets\Project\Scripts\Fireflies.cs" />
     <Compile Include="Assets\Project\Scripts\FireFliesAttract.cs" />
     <Compile Include="Assets\Project\Scripts\Helper\FirefliesMerger.cs" />
     <Compile Include="Assets\Project\Scripts\Movable.cs" />
     <Compile Include="Assets\Project\Scripts\Player.cs" />
+    <Compile Include="Assets\Project\Scripts\puzzle.cs" />
     <Compile Include="Assets\Project\Scripts\wheel\button.cs" />
     <Compile Include="Assets\Project\Scripts\wheel\WheelRiddle.cs" />
     <Compile Include="Assets\Project\Scripts\wheel\WheelScript.cs" />
