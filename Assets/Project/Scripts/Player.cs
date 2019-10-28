@@ -2,13 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using UnityEngine.XR;
 
 // Script for handling player input
 public class Player : Movable
 {
+    // Options
+    [SerializeField] private float mouseRotationSpeed = 2;
+
     // References
     private Fireflies firstFireflies;
-    private FireFliesAttract fireFliesAttract;
+    private FireFliesAttract attractBall;
 
     // Logic fields
     private float rotationX;
@@ -16,49 +20,62 @@ public class Player : Movable
 
     private void Awake()
     {
-            //firstFireflies = GameObject.Find("Fireflies").GetComponent<Fireflies>();
-            fireFliesAttract = GameObject.Find("AttractBall").GetComponent<FireFliesAttract>();
-
+        firstFireflies = GameObject.Find("Fireflies").GetComponent<Fireflies>();
+        attractBall = GameObject.Find("AttractBall")?.GetComponent<FireFliesAttract>();
     }
 
-    new void Update()
+    void Update()
     {
         base.Update();
-
-        // On left mouse click
-        if (Input.GetMouseButtonDown(0))
+        if (!XRDevice.isPresent)
         {
-            RaycastHit hit;
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-
-            if (Physics.Raycast(ray, out hit))
+            // On left mouse click
+            if (Input.GetMouseButtonDown(0))
             {
-                switch (hit.transform.tag)
+                RaycastHit hit;
+                Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+
+                if (Physics.Raycast(ray, out hit))
                 {
-                    case "Fireflies":
-                        Fireflies firefliesHitted = hit.transform.GetComponent<Fireflies>();
-                        firefliesHitted.Seperate(transform.position);
-                        break;
-                    case "Elevator":
-                        Elevator elevator = hit.transform.GetComponentInParent<Elevator>();
-                        elevator.OpenDoors();
-                        break;
-                    case "AttractBall":
-                        fireFliesAttract.follow = true;
-                        break;
-                       
+                    switch (hit.transform.tag)
+                    {
+                        case "Fireflies":
+                            Fireflies firefliesHitted = hit.transform.GetComponent<Fireflies>();
+                            firefliesHitted.Seperate(transform.position);
+                            break;
+                        case "Elevator":
+                            Elevator elevator = hit.transform.GetComponentInParent<Elevator>();
+                            elevator.OpenDoors();
+                            break;
+                        case "AttractBall":
+                            if (attractBall)
+                            {
+                                attractBall.moveWithMouse = true;
+                            }
+                            break;
+                    }
                 }
+            } else if (Input.GetMouseButtonUp(0))
+            {
+                attractBall.moveWithMouse = false;
             }
-        }
 
-        // On moving mouse
-        rotationX += speed * Input.GetAxis("Mouse X");
-        rotationY -= speed * Input.GetAxis("Mouse Y");
-        transform.eulerAngles = new Vector3(rotationY, rotationX, 0);
+            // On moving mouse
+            rotationX += mouseRotationSpeed * Input.GetAxis("Mouse X");
+            rotationY -= mouseRotationSpeed * Input.GetAxis("Mouse Y");
+            transform.eulerAngles = new Vector3(rotationY, rotationX, 0);
 
-        if (Input.GetKey("s"))
-        {
-            firstFireflies.Activate(transform.position);
+            // Activate fireflies from lamp
+            if (Input.GetKey("s"))
+            {
+                firstFireflies.Activate(transform.position);
+            }
+
+            // Follow attract ball
+            if (attractBall && Input.GetKey("f"))
+            {
+                attractBall.shouldFollow = true;
+            }
         }
     }
 }

@@ -9,6 +9,7 @@ TagManager:
   - AttractBall
   - cage1
   - cage2
+  - Controller
   layers:
   - Default
   - TransparentFX
@@ -19,8 +20,8 @@ TagManager:
   - 
   - 
   - Ambient-Light
-  - 
-  - 
+  - Teleportation
+  - Grabbing
   - 
   - 
   - 

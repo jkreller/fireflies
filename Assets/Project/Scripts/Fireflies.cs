@@ -145,19 +145,15 @@ public class Fireflies : Movable
         deactivateFirefly = true;
     }
 
-    void OnTriggerStay(Collider other){
+    void OnTriggerStay(Collider other)
+    {
         if (!deactivateFirefly)
         {
-            // follow attractBall
-            if (other.gameObject.CompareTag("AttractBall"))
+            // Follow fire flies attract object
+            FireFliesAttract fireFliesAttract = other.gameObject.GetComponent<FireFliesAttract>();
+            if (fireFliesAttract && fireFliesAttract.shouldFollow)
             {
-                if (fireFliesAttract.follow)
-                {
-                    if (Input.GetKey("f"))
-                    {
-                        StartMovement(other.gameObject.transform.position);
-                    }
-                }
+                StartMovement(other.gameObject.transform.position);
             }
         }
     }

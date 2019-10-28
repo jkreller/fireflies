@@ -29,7 +29,7 @@ public class Elevator : MonoBehaviour
     {
         if (skipElevator)
         {
-            player.transform.position = transform.position + Vector3.down * 31.9f + Vector3.forward * playerOffsetZ;
+            player.transform.position = room.transform.position + Vector3.down * room.transform.localScale.y;
         } else
         {
             ToggleRoom(0);
@@ -46,14 +46,20 @@ public class Elevator : MonoBehaviour
         }
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        // When player enters elevator
+        if (other.CompareTag("Player"))
+        {
+            SetAnimState(2);
+            playerOffsetY = player.transform.position.y - transform.position.y;
+            attachPlayer = true;
+        }
+    }
+
     public void OpenDoors()
     {
         SetAnimState(1);
-    }
-
-    public void FinishOpening()
-    {
-        player.StartMovement(new Vector3(transform.position.x, player.transform.position.y, transform.position.z + playerOffsetZ), AfterPlayerMovement);
     }
 
     public void UnattachPlayer()
@@ -67,13 +73,6 @@ public class Elevator : MonoBehaviour
         {
             child.gameObject.SetActive(active == 0 ? false : true);
         }
-    }
-
-    private void AfterPlayerMovement()
-    {
-        SetAnimState(2);
-        playerOffsetY = player.transform.position.y - transform.position.y;
-        attachPlayer = true;
     }
 
     private void SetAnimState(int state)

@@ -6,7 +6,6 @@ public class Movable : MonoBehaviour
 {
     // Options
     [Header("Movements")]
-    [SerializeField] protected float speed = 2;
     [SerializeField] protected float movementSpeed = 1;
 
     // Logic fields
@@ -16,7 +15,6 @@ public class Movable : MonoBehaviour
 
     public delegate void MovingCallBack();
 
-    // Update is called once per frame
     protected void Update()
     {
         // Move object if isset

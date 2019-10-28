@@ -1,29 +1,88 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.XR;
+using Valve.VR;
 
-public class FireFliesAttract : MonoBehaviour
+public class FireFliesAttract : ControllerComponent
 {
-    public bool follow;
-    private Vector3 mOffset;
-    private float mZCoord;
+    // References
+    private Fireflies fireflies;
+    [SerializeField] private SteamVR_Action_Boolean grabPinchAction;
+    [SerializeField] private Material glowingMaterial;
+    private Light lightObject;
+    private MeshRenderer[] meshRenderers;
+    private Material[] oldMaterials;
 
-    private Vector3 GetMouseAsWorldPoint()
+    // Logic fields
+    [System.NonSerialized] public bool moveWithMouse;
+    [System.NonSerialized] public bool shouldFollow;
+    private bool isGlowing;
+
+    private void Awake()
     {
-        Vector3 mousePoint = Input.mousePosition;
-        mousePoint.z = mZCoord;
-        return Camera.main.ScreenToWorldPoint(mousePoint);
+        fireflies = GameObject.Find("Fireflies").GetComponent<Fireflies>();
+        lightObject = GetComponentInChildren<Light>();
+        lightObject.enabled = false;
     }
 
     void Update()
     {
-        if(follow){
+        if (XRDevice.isPresent)
+        {
+            if (grabPinchAction.GetStateDown(handType))
+            {
+                shouldFollow = true;
+                if (!isGlowing)
+                {
+                    Glow(true);
+                }
+            } else if (grabPinchAction.GetLastStateUp(handType))
+            {
+                shouldFollow = false;
+                if (isGlowing)
+                {
+                    Glow(false);
+                }
+            }
+        } else if (moveWithMouse)
+        {
             Vector3 temp = Input.mousePosition;
-            temp.z = Input.mousePosition.z+1.5f; 
+            temp.z = Input.mousePosition.z + 1.5f;
             this.transform.position = Camera.main.ScreenToWorldPoint(temp);
+        } else
+        {
+            shouldFollow = false;
         }
-        if(Input.GetMouseButtonUp(0)){
-            follow = false;
+    }
+
+    private void Glow(bool turnOn)
+    {
+        if (turnOn)
+        {
+            if (meshRenderers == null)
+            {
+                meshRenderers = GetComponentsInChildren<MeshRenderer>();
+                oldMaterials = new Material[meshRenderers.Length];
+                for (int i = 0; i < meshRenderers.Length; i++)
+                {
+                    oldMaterials[i] = meshRenderers[i].material;
+                }
+            }
+            foreach (MeshRenderer meshRenderer in meshRenderers)
+            {
+                meshRenderer.material = glowingMaterial;
+            }
+            lightObject.enabled = true;
+            isGlowing = true;
+        } else
+        {
+            for (int i = 0; i < meshRenderers.Length; i++)
+            {
+                meshRenderers[i].material = oldMaterials[i];
+            }
+            lightObject.enabled = false;
+            isGlowing = false;
         }
     }
 }
