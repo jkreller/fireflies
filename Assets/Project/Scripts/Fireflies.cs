@@ -5,7 +5,6 @@ using UnityEngine;
 // Script for fireflies particle system
 public class Fireflies : Movable
 {
-    
     // Options
     [Header("Fireflies Options")]
     [SerializeField] private bool initializeToLamp = true;
@@ -23,13 +22,11 @@ public class Fireflies : Movable
     private List<GameObject> pathMakingObejcts;
 
     //Fireflies follow
-    FireFliesAttract fireFliesAttract;
+    FireFliesInteraction fireFliesAttract;
 
     new void Update()
     {
         base.Update();
-        //Debug.Log(this.gameObject.transform.localScale);
-
 
         if (this.gameObject.transform.localScale.x < 0.6 && this.gameObject.transform.localScale.x > 0.16)
         {
@@ -49,7 +46,6 @@ public class Fireflies : Movable
                 c.enabled = false;
             }
         }
-
     }
 
     void Start()
@@ -78,8 +74,8 @@ public class Fireflies : Movable
             SetAnimState(1);
         }
 
-        //get attractBall
-        fireFliesAttract = GameObject.Find("AttractBall")?.GetComponent<FireFliesAttract>();
+        // Get AttractBall
+        //fireFliesAttractBall = GameObject.Find("AttractBall")?.GetComponent<FireFliesInteraction>();
     }
 
 
@@ -134,8 +130,9 @@ public class Fireflies : Movable
             }
         }
     }
-    private void pathFinding(List<GameObject> pathBubbles){
-        
+
+    private void pathFinding(List<GameObject> pathBubbles)
+    {
         foreach(GameObject bubble in pathBubbles){
             StartMovement(bubble.transform.position);
             StartCoroutine(WaitforPoint());
@@ -147,17 +144,12 @@ public class Fireflies : Movable
 
     void OnTriggerStay(Collider other)
     {
-        if (!deactivateFirefly)
+        if (!deactivateFirefly) {
             // Follow fire flies attract object
-            FireFliesAttract fireFliesAttract = other.gameObject.GetComponent<FireFliesAttract>();
+            FireFliesInteraction fireFliesAttract = other.gameObject.GetComponent<FireFliesInteraction>();
             if (fireFliesAttract && fireFliesAttract.shouldFollow)
             {
-                // Follow fire flies attract object
-                FireFliesAttract fireFliesAttract = other.gameObject.GetComponent<FireFliesAttract>();
-                if (fireFliesAttract && fireFliesAttract.shouldFollow)
-                {
-                    StartMovement(other.gameObject.transform.position);
-                }
+                StartMovement(other.gameObject.transform.position);
             }
         }
     }

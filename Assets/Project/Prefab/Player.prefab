@@ -257,7 +257,6 @@ MonoBehaviour:
   grabGripAction:
     actionPath: /actions/default/in/GrabGrip
     needsReinit: 0
-  otherController: {fileID: 3596050081761399389}
 --- !u!114 &3596050081761399335
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -297,6 +296,8 @@ MonoBehaviour:
     actionPath: /actions/default/in/GrabPinch
     needsReinit: 0
   glowingMaterial: {fileID: 2100000, guid: 6dafecdf4efe0ea46a355683424798fe, type: 2}
+  otherController: {fileID: 3596050081761399389}
+  minSeperationDragDistance: 0.5
 --- !u!1 &3596050081761399333
 GameObject:
   m_ObjectHideFlags: 0
@@ -422,7 +423,6 @@ MonoBehaviour:
   grabGripAction:
     actionPath: /actions/default/in/GrabGrip
     needsReinit: 0
-  otherController: {fileID: 3596050081761399328}
 --- !u!114 &3596050081761399387
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -462,6 +462,8 @@ MonoBehaviour:
     actionPath: /actions/default/in/GrabPinch
     needsReinit: 0
   glowingMaterial: {fileID: 2100000, guid: 6dafecdf4efe0ea46a355683424798fe, type: 2}
+  otherController: {fileID: 3596050081761399328}
+  minSeperationDragDistance: 0.5
 --- !u!1 &3596050081820218996
 GameObject:
   m_ObjectHideFlags: 0

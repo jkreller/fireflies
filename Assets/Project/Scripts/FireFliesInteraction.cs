@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.XR;
 using Valve.VR;
 
-public class FireFliesAttract : ControllerComponent
+public class FireFliesInteraction : ControllerComponent
 {
     // References
     [SerializeField] private SteamVR_Action_Boolean grabPinchAction;
@@ -26,7 +26,10 @@ public class FireFliesAttract : ControllerComponent
     {
         fireflies = GameObject.Find("Fireflies").GetComponent<Fireflies>();
         lightObject = GetComponentInChildren<Light>();
-        lightObject.enabled = false;
+        if (lightObject)
+        {
+            lightObject.enabled = false;
+        }
     }
 
     void Update()
@@ -70,8 +73,8 @@ public class FireFliesAttract : ControllerComponent
         } else if (moveWithMouse)
         {
             Vector3 temp = Input.mousePosition;
-            temp.z = Input.mousePosition.z + 1.5f;
-            this.transform.position = Camera.main.ScreenToWorldPoint(temp);
+            temp.z = Input.mousePosition.z + 2;
+            transform.position = Camera.main.ScreenToWorldPoint(temp);
         } else
         {
             shouldFollow = false;

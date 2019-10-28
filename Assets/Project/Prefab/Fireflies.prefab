@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 642662399527706004}
   - component: {fileID: 642662399527706005}
   - component: {fileID: 642662399527706010}
+  - component: {fileID: 2573208808977745861}
   - component: {fileID: 642662399527706011}
   - component: {fileID: 642662399527706008}
   m_Layer: 0
@@ -50,6 +51,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movementSpeed: 1
   initializeToLamp: 1
+  firefliesSize: 0
+  deactivateFirefly: 0
+  flyToNextPoint: 0
 --- !u!199 &642662399527706004
 ParticleSystemRenderer:
   serializedVersion: 6
@@ -4790,8 +4794,21 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 1
+  m_Radius: 0.6
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!135 &2573208808977745861
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 642662399527706014}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 1
+  m_Center: {x: 0.0021769998, y: -0.06023228, z: 0.06776213}
 --- !u!54 &642662399527706011
 Rigidbody:
   m_ObjectHideFlags: 0

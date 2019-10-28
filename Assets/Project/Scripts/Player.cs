@@ -12,7 +12,7 @@ public class Player : Movable
 
     // References
     private Fireflies firstFireflies;
-    private FireFliesAttract attractBall;
+    private FireFliesInteraction attractBall;
 
     // Logic fields
     private float rotationX;
@@ -21,7 +21,7 @@ public class Player : Movable
     private void Awake()
     {
         firstFireflies = GameObject.Find("Fireflies").GetComponent<Fireflies>();
-        attractBall = GameObject.Find("AttractBall")?.GetComponent<FireFliesAttract>();
+        attractBall = GameObject.Find("AttractBall")?.GetComponent<FireFliesInteraction>();
     }
 
     void Update()
@@ -37,6 +37,7 @@ public class Player : Movable
 
                 if (Physics.Raycast(ray, out hit))
                 {
+                    print(hit.transform.tag);
                     switch (hit.transform.tag)
                     {
                         case "Fireflies":
