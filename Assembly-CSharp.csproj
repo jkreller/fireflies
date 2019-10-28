@@ -67,7 +67,7 @@
     <Compile Include="Assets\Project\Scripts\Elevator.cs" />
     <Compile Include="Assets\Project\Scripts\ElevatorButton.cs" />
     <Compile Include="Assets\Project\Scripts\Fireflies.cs" />
-    <Compile Include="Assets\Project\Scripts\FireFliesAttract.cs" />
+    <Compile Include="Assets\Project\Scripts\FireFliesInteraction.cs" />
     <Compile Include="Assets\Project\Scripts\Helper\FirefliesMerger.cs" />
     <Compile Include="Assets\Project\Scripts\LaserPointer.cs" />
     <Compile Include="Assets\Project\Scripts\Movable.cs" />

@@ -146,6 +146,7 @@ GameObject:
   - component: {fileID: 3596050081761399329}
   - component: {fileID: 3596050081761399328}
   - component: {fileID: 3596050081761399335}
+  - component: {fileID: 6095189380375087540}
   m_Layer: 0
   m_Name: Controller (right)
   m_TagString: Controller
@@ -254,8 +255,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   grabGripAction:
-    actionPath: 
+    actionPath: /actions/default/in/GrabGrip
     needsReinit: 0
+  otherController: {fileID: 3596050081761399389}
 --- !u!114 &3596050081761399335
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -271,7 +273,7 @@ MonoBehaviour:
   teleportPointerOffset: {x: 0, y: 0, z: 0}
   teleportMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 512
   teleportAction:
     actionPath: /actions/default/in/Teleport
     needsReinit: 0
@@ -279,6 +281,22 @@ MonoBehaviour:
     type: 3}
   teleportReticlePrefab: {fileID: 4771195602432044344, guid: 8cb5742270c99a449b4d0b8f17146c54,
     type: 3}
+--- !u!114 &6095189380375087540
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3596050081761399332}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b764988f747d45568e71d9fb96e5ecb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  grabPinchAction:
+    actionPath: /actions/default/in/GrabPinch
+    needsReinit: 0
+  glowingMaterial: {fileID: 2100000, guid: 6dafecdf4efe0ea46a355683424798fe, type: 2}
 --- !u!1 &3596050081761399333
 GameObject:
   m_ObjectHideFlags: 0
@@ -293,6 +311,7 @@ GameObject:
   - component: {fileID: 3596050081761399390}
   - component: {fileID: 3596050081761399389}
   - component: {fileID: 3596050081761399387}
+  - component: {fileID: 7643736137314446971}
   m_Layer: 0
   m_Name: Controller (left)
   m_TagString: Controller
@@ -401,8 +420,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   grabGripAction:
-    actionPath: 
+    actionPath: /actions/default/in/GrabGrip
     needsReinit: 0
+  otherController: {fileID: 3596050081761399328}
 --- !u!114 &3596050081761399387
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -418,7 +438,7 @@ MonoBehaviour:
   teleportPointerOffset: {x: 0, y: 0, z: 0}
   teleportMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 512
   teleportAction:
     actionPath: /actions/default/in/Teleport
     needsReinit: 0
@@ -426,6 +446,22 @@ MonoBehaviour:
     type: 3}
   teleportReticlePrefab: {fileID: 4771195602432044344, guid: 8cb5742270c99a449b4d0b8f17146c54,
     type: 3}
+--- !u!114 &7643736137314446971
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3596050081761399333}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b764988f747d45568e71d9fb96e5ecb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  grabPinchAction:
+    actionPath: /actions/default/in/GrabPinch
+    needsReinit: 0
+  glowingMaterial: {fileID: 2100000, guid: 6dafecdf4efe0ea46a355683424798fe, type: 2}
 --- !u!1 &3596050081820218996
 GameObject:
   m_ObjectHideFlags: 0

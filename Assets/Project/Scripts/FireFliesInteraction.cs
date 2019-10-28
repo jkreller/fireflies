@@ -7,9 +7,10 @@ using Valve.VR;
 public class FireFliesAttract : ControllerComponent
 {
     // References
-    private Fireflies fireflies;
     [SerializeField] private SteamVR_Action_Boolean grabPinchAction;
     [SerializeField] private Material glowingMaterial;
+    [SerializeField] private Controller otherController;
+    private Fireflies fireflies;
     private Light lightObject;
     private MeshRenderer[] meshRenderers;
     private Material[] oldMaterials;
@@ -17,7 +18,9 @@ public class FireFliesAttract : ControllerComponent
     // Logic fields
     [System.NonSerialized] public bool moveWithMouse;
     [System.NonSerialized] public bool shouldFollow;
+    [SerializeField] private float minSeperationDragDistance = 0.5f;
     private bool isGlowing;
+    private Vector3 seperatingStartPosition;
 
     private void Awake()
     {
@@ -32,17 +35,36 @@ public class FireFliesAttract : ControllerComponent
         {
             if (grabPinchAction.GetStateDown(handType))
             {
+                // Set that fireflies should follow
                 shouldFollow = true;
+
+                // Make controller glowing
                 if (!isGlowing)
                 {
                     Glow(true);
                 }
+
+                // Logic for seperating
+                seperatingStartPosition = transform.position;
             } else if (grabPinchAction.GetLastStateUp(handType))
             {
+                // Set that fireflies should not follow
                 shouldFollow = false;
+
+                // Deactivate controller glowing
                 if (isGlowing)
                 {
                     Glow(false);
+                }
+
+                // Logic for seperating
+                if (seperatingStartPosition != null)
+                {
+                    float dragDistance = Vector3.Distance(transform.position, seperatingStartPosition);
+                    if (dragDistance > minSeperationDragDistance)
+                    {
+                        // Todo
+                    }
                 }
             }
         } else if (moveWithMouse)

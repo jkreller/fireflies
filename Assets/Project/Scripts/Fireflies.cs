@@ -46,7 +46,7 @@ public class Fireflies : Movable
         }
 
         //get attractBall
-        fireFliesAttract = GameObject.Find("AttractBall").GetComponent<FireFliesAttract>();
+        fireFliesAttract = GameObject.Find("AttractBall")?.GetComponent<FireFliesAttract>();
     }
 
 
@@ -76,7 +76,6 @@ public class Fireflies : Movable
     void OnTriggerStay(Collider other) {
         // Follow fire flies attract object
         FireFliesAttract fireFliesAttract = other.gameObject.GetComponent<FireFliesAttract>();
-        print(fireFliesAttract.shouldFollow);
         if (fireFliesAttract && fireFliesAttract.shouldFollow)
         {
             StartMovement(other.gameObject.transform.position);

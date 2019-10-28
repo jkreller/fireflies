@@ -83,7 +83,6 @@ public class Controller : ControllerComponent
             Destroy(GetComponent<FixedJoint>());
             objectInHand.GetComponent<Rigidbody>().velocity = controllerPose.GetVelocity();
             objectInHand.GetComponent<Rigidbody>().angularVelocity = controllerPose.GetAngularVelocity();
-
         }
         objectInHand = null;
     }
