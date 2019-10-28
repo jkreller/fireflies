@@ -7,6 +7,8 @@ TagManager:
   - Fireflies
   - Elevator
   - AttractBall
+  - cage1
+  - cage2
   - Controller
   layers:
   - Default
