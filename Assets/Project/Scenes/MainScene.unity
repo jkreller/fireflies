@@ -644,7 +644,7 @@ PrefabInstance:
     - target: {fileID: 3511321792766306857, guid: 6927222d66e3be5468e33d0496d2489e,
         type: 3}
       propertyPath: initializeToLamp
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3511321792766306855, guid: 6927222d66e3be5468e33d0496d2489e,
         type: 3}
