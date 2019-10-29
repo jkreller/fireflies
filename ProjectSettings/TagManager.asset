@@ -10,6 +10,8 @@ TagManager:
   - cage1
   - cage2
   - Controller
+  - Cage1
+  - Cage2
   layers:
   - Default
   - TransparentFX

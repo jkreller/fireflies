@@ -118,7 +118,7 @@ GameObject:
   - component: {fileID: 2331539732610792323}
   m_Layer: 0
   m_Name: Cage
-  m_TagString: cage2
+  m_TagString: Cage2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -425,7 +425,7 @@ GameObject:
   - component: {fileID: 6219962726039832800}
   m_Layer: 0
   m_Name: cage2point1
-  m_TagString: cage1
+  m_TagString: Cage2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

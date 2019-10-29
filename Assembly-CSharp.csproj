@@ -62,22 +62,21 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Project\Scripts\bubble.cs" />
-    <Compile Include="Assets\Project\Scripts\cageDoor.cs" />
+    <Compile Include="Assets\Project\Scripts\Button.cs" />
+    <Compile Include="Assets\Project\Scripts\CageBubble.cs" />
+    <Compile Include="Assets\Project\Scripts\CageDoor.cs" />
     <Compile Include="Assets\Project\Scripts\Controller.cs" />
     <Compile Include="Assets\Project\Scripts\ControllerComponent.cs" />
     <Compile Include="Assets\Project\Scripts\Elevator.cs" />
-    <Compile Include="Assets\Project\Scripts\ElevatorButton.cs" />
     <Compile Include="Assets\Project\Scripts\Fireflies.cs" />
-    <Compile Include="Assets\Project\Scripts\FireFliesInteraction.cs" />
-    <Compile Include="Assets\Project\Scripts\Helper\FirefliesMerger.cs" />
+    <Compile Include="Assets\Project\Scripts\FirefliesInteraction.cs" />
+    <Compile Include="Assets\Project\Scripts\Helper\FirefliesHelper.cs" />
     <Compile Include="Assets\Project\Scripts\LaserPointer.cs" />
     <Compile Include="Assets\Project\Scripts\Movable.cs" />
     <Compile Include="Assets\Project\Scripts\Player.cs" />
-    <Compile Include="Assets\Project\Scripts\puzzle.cs" />
-    <Compile Include="Assets\Project\Scripts\Wheel\button.cs" />
+    <Compile Include="Assets\Project\Scripts\Puzzle.cs" />
+    <Compile Include="Assets\Project\Scripts\Wheel\Wheel.cs" />
     <Compile Include="Assets\Project\Scripts\Wheel\WheelRiddle.cs" />
-    <Compile Include="Assets\Project\Scripts\Wheel\WheelScript.cs" />
     <None Include="Assets\BOXOPHOBIC\Skybox Cubemap Extended\Shaders\Skybox Cubemap Extended.shader" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>C:/Users/Student/Documents/GitHub/fireflies/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>

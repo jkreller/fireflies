@@ -2,11 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class puzzle : MonoBehaviour
+public class Puzzle : MonoBehaviour
 {
     Rigidbody rb;
-
-
 
     void Start()
     {

@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7196882556826643417}
   m_Layer: 0
   m_Name: Cage
-  m_TagString: Untagged
+  m_TagString: Cage1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -107,7 +107,7 @@ GameObject:
   - component: {fileID: 2785094443266950438}
   m_Layer: 0
   m_Name: cage1point1
-  m_TagString: cage1
+  m_TagString: Cage1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

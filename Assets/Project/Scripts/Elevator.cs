@@ -13,6 +13,7 @@ public class Elevator : MonoBehaviour
     private Animator animator;
     private Player player;
     private GameObject room;
+    private Collider cabinCollider;
 
     // Logic fields
     private bool attachPlayer;
@@ -22,7 +23,9 @@ public class Elevator : MonoBehaviour
     {
         animator = GetComponentInParent<Animator>();
         room = GameObject.Find("Room");
-        player = GameObject.Find("Player").GetComponent<Player>();
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
+        cabinCollider = GameObject.Find("Cabin").GetComponent<Collider>();
+        cabinCollider.isTrigger = true;
     }
 
     void Start()
@@ -60,6 +63,7 @@ public class Elevator : MonoBehaviour
     public void OpenDoors()
     {
         SetAnimState(1);
+        cabinCollider.isTrigger = false;
     }
 
     public void UnattachPlayer()

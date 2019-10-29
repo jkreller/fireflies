@@ -12,7 +12,7 @@ public class Player : Movable
 
     // References
     private Fireflies firstFireflies;
-    private FireFliesInteraction attractBall;
+    private FirefliesInteraction attractBall;
 
     // Logic fields
     private float rotationX;
@@ -21,10 +21,10 @@ public class Player : Movable
     private void Awake()
     {
         firstFireflies = GameObject.Find("Fireflies").GetComponent<Fireflies>();
-        attractBall = GameObject.Find("AttractBall")?.GetComponent<FireFliesInteraction>();
+        attractBall = GameObject.Find("AttractBall")?.GetComponent<FirefliesInteraction>();
     }
 
-    void Update()
+    new void Update()
     {
         base.Update();
         if (!XRDevice.isPresent)
@@ -37,12 +37,11 @@ public class Player : Movable
 
                 if (Physics.Raycast(ray, out hit))
                 {
-                    print(hit.transform.tag);
                     switch (hit.transform.tag)
                     {
                         case "Fireflies":
                             Fireflies firefliesHitted = hit.transform.GetComponent<Fireflies>();
-                            firefliesHitted.Seperate(transform.position);
+                            firefliesHitted.Seperate();
                             break;
                         case "Elevator":
                             Elevator elevator = hit.transform.GetComponentInParent<Elevator>();
@@ -69,7 +68,7 @@ public class Player : Movable
             // Activate fireflies from lamp
             if (Input.GetKey("s"))
             {
-                firstFireflies.Activate(transform.position);
+                firstFireflies.ActivateFromLamp(transform.position);
             }
 
             // Follow attract ball
