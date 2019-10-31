@@ -7,6 +7,7 @@ public class Fireflies : Movable
 {
     // Options
     [Header("Fireflies Options")]
+    [SerializeField] private float minScale; // one fourth of initial size, for example 0.5 if initial scale is 2
     [SerializeField] private bool initializeToLamp = true;
     [SerializeField] private float seperationDistanceFactor = 0.8f;
 
@@ -18,13 +19,12 @@ public class Fireflies : Movable
     [System.NonSerialized] public bool flyToNextPoint = false;
     [System.NonSerialized] public int firefliesCount;
     private float seperationDistance;
-    private static float minScale; // one fourth of initial size, for example 0.5 if initial scale is 2
-    private bool isInitialFireflies;
     private bool deactivateFirefly;
     private List<GameObject> pathMakingObejcts = new List<GameObject>();
     private float avrgScale;
     private FirefliesInteraction fireFliesAttract;
     private List<FirefliesInteraction> firefliesInteractions = new List<FirefliesInteraction>();
+    private bool collidersEnabled = true;
 
     private void Start()
     {
@@ -39,11 +39,9 @@ public class Fireflies : Movable
 
         avrgScale = (transform.localScale.x + transform.localScale.y + transform.localScale.z) / 3;
 
-        // If is inital fireflies object
-        if (transform.name == "Fireflies")
+        if (minScale == 0)
         {
-            isInitialFireflies = true;
-            minScale = avrgScale * 0.25f;
+            minScale = avrgScale / 4;
         }
 
         // Set how many fireflies should be present (fireflies count)
@@ -61,11 +59,13 @@ public class Fireflies : Movable
         }
 
         // Initialize to lamp
-        if (initializeToLamp && isInitialFireflies)
+        if (initializeToLamp)
         {
             GameObject lamp = GameObject.Find("Lamp");
             transform.position = lamp.transform.position + Vector3.up * 0.1f;
             SetAnimState(1);
+            deactivateFirefly = true;
+            initializeToLamp = false;
         }
     }
 
@@ -73,22 +73,20 @@ public class Fireflies : Movable
     {
         base.Update();
 
-        if (deactivateFirefly)
+        if (deactivateFirefly && collidersEnabled)
         {
             foreach (Collider c in GetComponents<Collider>())
             {
                 c.enabled = false;
             }
-        }
-    }
-
-    private void OnEnable()
-    {
-        // On first enable - logic for diabeling and enabeling because of elevator
-        if (initializeToLamp && isInitialFireflies)
+            collidersEnabled = false;
+        } else if (!deactivateFirefly && !collidersEnabled)
         {
-            SetAnimState(1);
-            initializeToLamp = false;
+            foreach (Collider c in GetComponents<Collider>())
+            {
+                c.enabled = true;
+            }
+            collidersEnabled = true;
         }
     }
 
@@ -194,10 +192,16 @@ public class Fireflies : Movable
     }
 
     // Move fireflies from lamp to player and size them to normal
-    public void ActivateFromLamp(Vector3 playerPosition)
+    public void ActivateFromLamp()
     {
+        Vector3 afterLampTarget = GameObject.Find("FFTargetAfterLamp").transform.position;
         SetAnimState(2);
-        StartMovement(playerPosition + Vector3.back);
+        float oldMovementSpeed = movementSpeed;
+        movementSpeed = 1;
+        StartMovement(afterLampTarget, () => {
+            movementSpeed = oldMovementSpeed;
+            deactivateFirefly = false;
+        });
     }
 
     // Seperate one fireflies object into two objects of half size

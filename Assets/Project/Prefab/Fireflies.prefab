@@ -50,6 +50,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movementSpeed: 10
+  minScale: 0
   initializeToLamp: 1
   seperationDistanceFactor: 0.8
 --- !u!199 &642662399527706004

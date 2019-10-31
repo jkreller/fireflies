@@ -68,7 +68,7 @@ public class Player : Movable
             // Activate fireflies from lamp
             if (Input.GetKey("s"))
             {
-                firstFireflies.ActivateFromLamp(transform.position);
+                firstFireflies.ActivateFromLamp();
             }
 
             // Follow attract ball

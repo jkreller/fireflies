@@ -29,15 +29,15 @@ public class Button : MonoBehaviour
         switch (axis)
         {
             case Axis.x:
-                axisVector = Vector3.right;
+                axisVector = Vector3.right * Mathf.Sign(pressDistance);
                 endPoint.x += pressDistance;
                 break;
             case Axis.y:
-                axisVector = Vector3.up;
+                axisVector = Vector3.up * Mathf.Sign(pressDistance);
                 endPoint.y += pressDistance;
                 break;
             case Axis.z:
-                axisVector = Vector3.forward;
+                axisVector = Vector3.forward * Mathf.Sign(pressDistance);
                 endPoint.z += pressDistance;
                 break;
         }

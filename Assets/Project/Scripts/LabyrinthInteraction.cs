@@ -24,10 +24,9 @@ public class LabyrinthInteraction : ControllerComponent
                 }
             }
 
-            if (grabGripAction.GetLastStateUp(handType) && collidingObject)
+            if (grabGripAction.GetLastStateUp(handType))
             {
-                collidingObject.velocity *= 0.5f;
-                collidingObject = null;
+                ResetCollidingObject();
             }
 
             if (grabGripAction.GetState(handType) && collidingObject != null)
@@ -49,11 +48,7 @@ public class LabyrinthInteraction : ControllerComponent
 
     public void OnTriggerExit(Collider other)
     {
-        collidingObject.velocity *= 0.5f;
-        if (collidingObject)
-        {
-            collidingObject = null;
-        }
+        ResetCollidingObject();
     }
 
     private void SetCollidingObject(Collider other)
@@ -61,6 +56,15 @@ public class LabyrinthInteraction : ControllerComponent
         if (collidingObject == null && other.CompareTag("LabyrinthPart"))
         {
             collidingObject = other.GetComponent<Rigidbody>();
+        }
+    }
+
+    private void ResetCollidingObject()
+    {
+        if (collidingObject)
+        {
+            collidingObject.velocity *= 0.5f;
+            collidingObject = null;
         }
     }
 }
