@@ -79,7 +79,6 @@
     <Compile Include="Assets\Project\Scripts\Puzzle.cs" />
     <Compile Include="Assets\Project\Scripts\Wheel\Wheel.cs" />
     <Compile Include="Assets\Project\Scripts\Wheel\WheelRiddle.cs" />
-    <None Include="Assets\BOXOPHOBIC\Skybox Cubemap Extended\Shaders\Skybox Cubemap Extended.shader" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>C:/Users/Student/Documents/GitHub/fireflies/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
