@@ -12,6 +12,7 @@ public class Controller : ControllerComponent
     // Logic fields
     private GameObject collidingObject;
     private GameObject objectInHand;
+    private Vector3? dragStartPosition;
 
     void Update()
     {
@@ -23,12 +24,9 @@ public class Controller : ControllerComponent
             }
         }
 
-        if (grabGripAction.GetLastStateUp(handType))
+        if (grabGripAction.GetLastStateUp(handType) && objectInHand)
         {
-            if (objectInHand)
-            {
-                ReleaseObject();
-            }
+            ReleaseObject();
         }
     }
 

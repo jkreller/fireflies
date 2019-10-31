@@ -12,6 +12,7 @@ TagManager:
   - Controller
   - Cage1
   - Cage2
+  - LabyrinthPart
   layers:
   - Default
   - TransparentFX

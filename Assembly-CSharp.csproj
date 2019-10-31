@@ -68,9 +68,11 @@
     <Compile Include="Assets\Project\Scripts\Controller.cs" />
     <Compile Include="Assets\Project\Scripts\ControllerComponent.cs" />
     <Compile Include="Assets\Project\Scripts\Elevator.cs" />
+    <Compile Include="Assets\Project\Scripts\ElevatorDoor.cs" />
     <Compile Include="Assets\Project\Scripts\Fireflies.cs" />
     <Compile Include="Assets\Project\Scripts\FirefliesInteraction.cs" />
     <Compile Include="Assets\Project\Scripts\Helper\FirefliesHelper.cs" />
+    <Compile Include="Assets\Project\Scripts\LabyrinthInteraction.cs" />
     <Compile Include="Assets\Project\Scripts\LaserPointer.cs" />
     <Compile Include="Assets\Project\Scripts\Movable.cs" />
     <Compile Include="Assets\Project\Scripts\Player.cs" />

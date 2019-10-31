@@ -14,16 +14,19 @@ public class Elevator : MonoBehaviour
     private Player player;
     private GameObject room;
     private Collider cabinCollider;
+    private ElevatorDoor[] elevatorDoors;
 
     // Logic fields
     private bool attachPlayer;
     private float playerOffsetY;
+    float yRotation = 5.0f;
 
     void Awake()
     {
         animator = GetComponentInParent<Animator>();
         room = GameObject.Find("Room");
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
+        elevatorDoors = GetComponentsInChildren<ElevatorDoor>();
         cabinCollider = GameObject.Find("Cabin").GetComponent<Collider>();
         cabinCollider.isTrigger = true;
     }
@@ -32,10 +35,7 @@ public class Elevator : MonoBehaviour
     {
         if (skipElevator)
         {
-            player.transform.position = room.transform.position + Vector3.down * room.transform.localScale.y;
-        } else
-        {
-            ToggleRoom(0);
+            player.transform.position = room.transform.position + Vector3.down * 1.5f;
         }
     }
 
@@ -54,29 +54,43 @@ public class Elevator : MonoBehaviour
         // When player enters elevator
         if (other.CompareTag("Player"))
         {
-            SetAnimState(2);
+            CloseDoors();
+            SetAnimState(1);
             playerOffsetY = player.transform.position.y - transform.position.y;
             attachPlayer = true;
         }
     }
 
+    private void OnTriggerExit(Collider other)
+    {
+        // When player enters elevator
+        if (other.CompareTag("Player"))
+        {
+            CloseDoors();
+        }
+    }
+
     public void OpenDoors()
     {
-        SetAnimState(1);
+        foreach (ElevatorDoor elevatorDoor in elevatorDoors)
+        {
+            elevatorDoor.Open();
+        }
         cabinCollider.isTrigger = false;
+    }
+
+    public void CloseDoors()
+    {
+        foreach (ElevatorDoor elevatorDoor in elevatorDoors)
+        {
+            elevatorDoor.Close();
+        }
+        cabinCollider.isTrigger = true;
     }
 
     public void UnattachPlayer()
     {
         attachPlayer = false;
-    }
-
-    public void ToggleRoom(int active)
-    {
-        foreach (Transform child in room.GetComponentInChildren<Transform>())
-        {
-            child.gameObject.SetActive(active == 0 ? false : true);
-        }
     }
 
     private void SetAnimState(int state)

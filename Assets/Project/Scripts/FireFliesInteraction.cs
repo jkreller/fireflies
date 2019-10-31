@@ -29,8 +29,6 @@ public class FirefliesInteraction : ControllerComponent
         {
             lightObject.enabled = false;
         }
-
-        print(name + ": " + GetInstanceID());
     }
 
     void Update()
@@ -48,7 +46,7 @@ public class FirefliesInteraction : ControllerComponent
                     Glow(true);
                 }
 
-                // Logic for seperating
+                // Set start position of drag
                 dragStartPosition = transform.position;
             } else if (grabPinchAction.GetLastStateUp(handType))
             {
