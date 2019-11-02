@@ -32,10 +32,9 @@ public class Player : Movable
             // On left mouse click
             if (Input.GetMouseButtonDown(0))
             {
-                RaycastHit hit;
                 Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
-                if (Physics.Raycast(ray, out hit))
+                if (Physics.Raycast(ray, out RaycastHit hit))
                 {
                     switch (hit.transform.tag)
                     {
@@ -68,7 +67,7 @@ public class Player : Movable
             // Activate fireflies from lamp
             if (Input.GetKey("s"))
             {
-                firstFireflies.ActivateFromLamp();
+                firstFireflies.ActivateAfterInitialize();
             }
 
             // Follow attract ball

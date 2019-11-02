@@ -8,7 +8,8 @@ public class Fireflies : Movable
     // Options
     [Header("Fireflies Options")]
     [SerializeField] private float minScale; // one fourth of initial size, for example 0.5 if initial scale is 2
-    [SerializeField] private bool initializeToLamp = true;
+    [SerializeField] private Transform initializeTo;
+    [SerializeField] private Transform afterInitializeTarget;
     [SerializeField] private float seperationDistanceFactor = 0.8f;
 
     // References
@@ -58,14 +59,13 @@ public class Fireflies : Movable
             firefliesCount = 4;
         }
 
-        // Initialize to lamp
-        if (initializeToLamp)
+        // Initialize to object
+        if (initializeTo)
         {
-            GameObject lamp = GameObject.Find("Lamp");
-            transform.position = lamp.transform.position + Vector3.up * 0.1f;
+            transform.position = initializeTo.position;
             SetAnimState(1);
             deactivateFirefly = true;
-            initializeToLamp = false;
+            initializeTo = null;
         }
     }
 
@@ -105,7 +105,7 @@ public class Fireflies : Movable
             // Go into cage1
             if (other.gameObject.CompareTag("Cage1"))
                 {
-                if (firefliesCount == 2)
+                if (firefliesCount == 4)
                 {
                     pathMakingObejcts.Add(GameObject.Find("cage1point1"));
                     pathMakingObejcts.Add(GameObject.Find("cage1point2"));
@@ -118,7 +118,7 @@ public class Fireflies : Movable
             // Go into cage2
             if (other.gameObject.CompareTag("Cage2"))
             {
-                if (firefliesCount == 2)
+                if (firefliesCount == 4)
                 {
                     pathMakingObejcts.Add(GameObject.Find("cage2point1"));
                     pathMakingObejcts.Add(GameObject.Find("cage2point2"));
@@ -192,16 +192,19 @@ public class Fireflies : Movable
     }
 
     // Move fireflies from lamp to player and size them to normal
-    public void ActivateFromLamp()
+    public void ActivateAfterInitialize()
     {
-        Vector3 afterLampTarget = GameObject.Find("FFTargetAfterLamp").transform.position;
         SetAnimState(2);
-        float oldMovementSpeed = movementSpeed;
-        movementSpeed = 1;
-        StartMovement(afterLampTarget, () => {
-            movementSpeed = oldMovementSpeed;
-            deactivateFirefly = false;
-        });
+        if (afterInitializeTarget)
+        {
+            float oldMovementSpeed = movementSpeed;
+            movementSpeed = 1;
+            StartMovement(afterInitializeTarget.position, () => {
+                movementSpeed = oldMovementSpeed;
+                deactivateFirefly = false;
+                afterInitializeTarget = null;
+            });
+        }
     }
 
     // Seperate one fireflies object into two objects of half size

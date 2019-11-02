@@ -63,12 +63,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Project\Scripts\Button.cs" />
-    <Compile Include="Assets\Project\Scripts\CageBubble.cs" />
-    <Compile Include="Assets\Project\Scripts\CageDoor.cs" />
+    <Compile Include="Assets\Project\Scripts\Cage\CageBubble.cs" />
+    <Compile Include="Assets\Project\Scripts\Cage\CageDoor.cs" />
     <Compile Include="Assets\Project\Scripts\Controller.cs" />
     <Compile Include="Assets\Project\Scripts\ControllerComponent.cs" />
-    <Compile Include="Assets\Project\Scripts\Elevator.cs" />
-    <Compile Include="Assets\Project\Scripts\ElevatorDoor.cs" />
+    <Compile Include="Assets\Project\Scripts\Elevator\Elevator.cs" />
+    <Compile Include="Assets\Project\Scripts\Elevator\ElevatorDoor.cs" />
     <Compile Include="Assets\Project\Scripts\Fireflies.cs" />
     <Compile Include="Assets\Project\Scripts\FirefliesInteraction.cs" />
     <Compile Include="Assets\Project\Scripts\Helper\FirefliesHelper.cs" />
@@ -77,6 +77,8 @@
     <Compile Include="Assets\Project\Scripts\Movable.cs" />
     <Compile Include="Assets\Project\Scripts\Player.cs" />
     <Compile Include="Assets\Project\Scripts\Puzzle.cs" />
+    <Compile Include="Assets\Project\Scripts\SnippetRiddle.cs" />
+    <Compile Include="Assets\Project\Scripts\Snippets.cs" />
     <Compile Include="Assets\Project\Scripts\Wheel\Wheel.cs" />
     <Compile Include="Assets\Project\Scripts\Wheel\WheelRiddle.cs" />
     <Reference Include="Unity.Timeline.Editor">
