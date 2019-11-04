@@ -12,7 +12,7 @@ public class Snippets : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        snippetRiddle = GameObject.Find("Schnipsel").GetComponent<SnippetRiddle>();
+        snippetRiddle = GameObject.Find("Snippets").GetComponent<SnippetRiddle>();
         
     }
 

@@ -52,7 +52,10 @@ MonoBehaviour:
   movementSpeed: 10
   minScale: 0
   initializeTo: {fileID: 0}
+  afterInitializeTarget: {fileID: 0}
   seperationDistanceFactor: 0.8
+  initOffset: {x: 0, y: 0.1, z: 0}
+  deactivateFirefly: 0
 --- !u!199 &642662399527706004
 ParticleSystemRenderer:
   serializedVersion: 6

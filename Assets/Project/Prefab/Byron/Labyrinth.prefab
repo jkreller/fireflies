@@ -71,9 +71,8 @@ GameObject:
   - component: {fileID: 23942678661228563}
   - component: {fileID: 5491602548052371430}
   - component: {fileID: 4790361768171574998}
-  - component: {fileID: 3727837333813387284}
   m_Layer: 0
-  m_Name: labyrinthbubble6
+  m_Name: Bubble
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -151,18 +150,6 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &3727837333813387284
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 850337314393025830}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a915309c5f8aa4f2cb7f2989b825a781, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1164660743183224051
 GameObject:
   m_ObjectHideFlags: 0
@@ -411,9 +398,8 @@ GameObject:
   - component: {fileID: 2565216200390583879}
   - component: {fileID: 4125763791977521497}
   - component: {fileID: 5289750028189826356}
-  - component: {fileID: 9104742018167766916}
   m_Layer: 0
-  m_Name: labyrinthbubble8
+  m_Name: Bubble
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -491,18 +477,6 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &9104742018167766916
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1871613928948863216}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a915309c5f8aa4f2cb7f2989b825a781, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1962832334871748070
 GameObject:
   m_ObjectHideFlags: 0
@@ -739,9 +713,8 @@ GameObject:
   - component: {fileID: 6361503754576978541}
   - component: {fileID: 8727501646886664307}
   - component: {fileID: 7889160639519474394}
-  - component: {fileID: 264635142895188859}
   m_Layer: 0
-  m_Name: labyrinthbubble5
+  m_Name: Bubble
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -819,18 +792,6 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &264635142895188859
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2772147563063058956}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a915309c5f8aa4f2cb7f2989b825a781, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &3171251985092214769
 GameObject:
   m_ObjectHideFlags: 0
@@ -841,8 +802,6 @@ GameObject:
   m_Component:
   - component: {fileID: 8888090687566477374}
   - component: {fileID: 8239970560191984896}
-  - component: {fileID: 7929045259393920844}
-  - component: {fileID: 2543617079219155386}
   - component: {fileID: 8973635361379687206}
   m_Layer: 0
   m_Name: Puzzle_43 (1)
@@ -878,30 +837,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.48999998, y: 0.48999998, z: 0.099999994}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &7929045259393920844
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3171251985092214769}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 378833485ef4b48808760850e4feffd5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &2543617079219155386
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3171251985092214769}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 378833485ef4b48808760850e4feffd5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &8973635361379687206
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1046,9 +981,8 @@ GameObject:
   - component: {fileID: 7506251634953244481}
   - component: {fileID: 2730738012733823229}
   - component: {fileID: 939248629470211166}
-  - component: {fileID: 7258352254125502702}
   m_Layer: 0
-  m_Name: labyrinthbubble2
+  m_Name: Bubble
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1126,18 +1060,6 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &7258352254125502702
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4934163652191621429}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a915309c5f8aa4f2cb7f2989b825a781, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &4957913012740689694
 GameObject:
   m_ObjectHideFlags: 0
@@ -1441,9 +1363,8 @@ GameObject:
   - component: {fileID: 7854190954512609796}
   - component: {fileID: 7213326348850859210}
   - component: {fileID: 4606789463007720559}
-  - component: {fileID: 8403710270236033325}
   m_Layer: 0
-  m_Name: labyrinthbubble7
+  m_Name: Bubble
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1521,18 +1442,6 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &8403710270236033325
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6087065752492150317}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a915309c5f8aa4f2cb7f2989b825a781, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &6140132176154614443
 GameObject:
   m_ObjectHideFlags: 0
@@ -1717,9 +1626,8 @@ GameObject:
   - component: {fileID: 6374843169526875058}
   - component: {fileID: 421838054565064305}
   - component: {fileID: 4235567124669023613}
-  - component: {fileID: 3339707129644623411}
   m_Layer: 0
-  m_Name: labyrinthbubble13
+  m_Name: Bubble
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1797,18 +1705,6 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &3339707129644623411
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6428511554336202554}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a915309c5f8aa4f2cb7f2989b825a781, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &6584571651417081616
 GameObject:
   m_ObjectHideFlags: 0
@@ -2057,9 +1953,8 @@ GameObject:
   - component: {fileID: 5350430955692662045}
   - component: {fileID: 5643022442018045441}
   - component: {fileID: 346841904817374066}
-  - component: {fileID: 2425954524572042324}
   m_Layer: 0
-  m_Name: labyrinthbubble3
+  m_Name: Bubble
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2137,18 +2032,6 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &2425954524572042324
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7327669063804785243}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a915309c5f8aa4f2cb7f2989b825a781, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &7359288936735580842
 GameObject:
   m_ObjectHideFlags: 0
@@ -2280,10 +2163,9 @@ GameObject:
   - component: {fileID: 895740350038775405}
   - component: {fileID: 7589773911563010290}
   - component: {fileID: 7589773911563010291}
-  - component: {fileID: 7589773911563010295}
   m_Layer: 0
   m_Name: Puzzle_39
-  m_TagString: Untagged
+  m_TagString: LabyrinthPart
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2376,18 +2258,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.48999998, y: 0.48999998, z: 0.099999994}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &7589773911563010295
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7589773911563010301}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 378833485ef4b48808760850e4feffd5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &7589773911573085373
 GameObject:
   m_ObjectHideFlags: 0
@@ -2401,10 +2271,9 @@ GameObject:
   - component: {fileID: 4491163653084513353}
   - component: {fileID: 7589773911573085362}
   - component: {fileID: 7589773911573085363}
-  - component: {fileID: 7589773911573085367}
   m_Layer: 0
   m_Name: Puzzle_19
-  m_TagString: Untagged
+  m_TagString: LabyrinthPart
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2497,18 +2366,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.48999998, y: 0.48999998, z: 0.099999994}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &7589773911573085367
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7589773911573085373}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 378833485ef4b48808760850e4feffd5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &7589773911677400878
 GameObject:
   m_ObjectHideFlags: 0
@@ -2522,10 +2379,9 @@ GameObject:
   - component: {fileID: 2342099162991722631}
   - component: {fileID: 7589773911677400867}
   - component: {fileID: 7589773911677400876}
-  - component: {fileID: 7589773911677400864}
   m_Layer: 0
   m_Name: Puzzle_5
-  m_TagString: Untagged
+  m_TagString: LabyrinthPart
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2618,18 +2474,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.48999998, y: 0.48999998, z: 0.099999994}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &7589773911677400864
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7589773911677400878}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 378833485ef4b48808760850e4feffd5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &7589773911814771423
 GameObject:
   m_ObjectHideFlags: 0
@@ -2643,10 +2487,9 @@ GameObject:
   - component: {fileID: 8256267484333744282}
   - component: {fileID: 7589773911814771420}
   - component: {fileID: 7589773911814771421}
-  - component: {fileID: 7589773911814771409}
   m_Layer: 0
   m_Name: Puzzle_9
-  m_TagString: Untagged
+  m_TagString: LabyrinthPart
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2739,18 +2582,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.48999998, y: 0.48999998, z: 0.099999994}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &7589773911814771409
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7589773911814771423}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 378833485ef4b48808760850e4feffd5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &7589773911900730088
 GameObject:
   m_ObjectHideFlags: 0
@@ -2764,10 +2595,9 @@ GameObject:
   - component: {fileID: 2486020286706570416}
   - component: {fileID: 7589773911900730093}
   - component: {fileID: 7589773911900730094}
-  - component: {fileID: 7589773911900730082}
   m_Layer: 0
   m_Name: Puzzle_21
-  m_TagString: Untagged
+  m_TagString: LabyrinthPart
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2860,18 +2690,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.48999998, y: 0.48999998, z: 0.099999994}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &7589773911900730082
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7589773911900730088}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 378833485ef4b48808760850e4feffd5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &7589773911978207344
 GameObject:
   m_ObjectHideFlags: 0
@@ -2885,10 +2703,9 @@ GameObject:
   - component: {fileID: 6086108548949073786}
   - component: {fileID: 7589773911978207349}
   - component: {fileID: 7589773911978207350}
-  - component: {fileID: 7589773911978207338}
   m_Layer: 0
   m_Name: Puzzle_16
-  m_TagString: Untagged
+  m_TagString: LabyrinthPart
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2981,18 +2798,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.48999998, y: 0.48999998, z: 0.099999994}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &7589773911978207338
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7589773911978207344}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 378833485ef4b48808760850e4feffd5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &7589773912157047669
 GameObject:
   m_ObjectHideFlags: 0
@@ -3006,10 +2811,9 @@ GameObject:
   - component: {fileID: 2756130754096672794}
   - component: {fileID: 7589773912157047658}
   - component: {fileID: 7589773912157047659}
-  - component: {fileID: 7589773912157047663}
   m_Layer: 0
   m_Name: Puzzle_41
-  m_TagString: Untagged
+  m_TagString: LabyrinthPart
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3102,18 +2906,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.48999998, y: 0.48999998, z: 0.099999994}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &7589773912157047663
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7589773912157047669}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 378833485ef4b48808760850e4feffd5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &7589773912371439310
 GameObject:
   m_ObjectHideFlags: 0
@@ -3127,10 +2919,9 @@ GameObject:
   - component: {fileID: 8702744752492307622}
   - component: {fileID: 7589773912371439299}
   - component: {fileID: 7589773912371439308}
-  - component: {fileID: 7589773912371439296}
   m_Layer: 0
   m_Name: Puzzle_27
-  m_TagString: Untagged
+  m_TagString: LabyrinthPart
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3223,18 +3014,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.48999998, y: 0.48999998, z: 0.099999994}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &7589773912371439296
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7589773912371439310}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 378833485ef4b48808760850e4feffd5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &7589773912396825523
 GameObject:
   m_ObjectHideFlags: 0
@@ -3248,10 +3027,9 @@ GameObject:
   - component: {fileID: 2032768217575897097}
   - component: {fileID: 7589773912396825520}
   - component: {fileID: 7589773912396825521}
-  - component: {fileID: 7589773912396825525}
   m_Layer: 0
   m_Name: Puzzle_33
-  m_TagString: Untagged
+  m_TagString: LabyrinthPart
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3344,18 +3122,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.48999998, y: 0.48999998, z: 0.099999994}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &7589773912396825525
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7589773912396825523}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 378833485ef4b48808760850e4feffd5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &7589773912608485374
 GameObject:
   m_ObjectHideFlags: 0
@@ -3369,10 +3135,9 @@ GameObject:
   - component: {fileID: 6079040162448431976}
   - component: {fileID: 7589773912608485363}
   - component: {fileID: 7589773912608485372}
-  - component: {fileID: 7589773912608485360}
   m_Layer: 0
   m_Name: Puzzle_7
-  m_TagString: Untagged
+  m_TagString: LabyrinthPart
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3465,18 +3230,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.48999998, y: 0.48999998, z: 0.099999994}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &7589773912608485360
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7589773912608485374}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 378833485ef4b48808760850e4feffd5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &7589773912679141430
 GameObject:
   m_ObjectHideFlags: 0
@@ -3490,10 +3243,9 @@ GameObject:
   - component: {fileID: 3273316125709313928}
   - component: {fileID: 7589773912679141419}
   - component: {fileID: 7589773912679141428}
-  - component: {fileID: 7589773912679141416}
   m_Layer: 0
   m_Name: Puzzle_25
-  m_TagString: Untagged
+  m_TagString: LabyrinthPart
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3586,18 +3338,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.48999998, y: 0.48999998, z: 0.099999994}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &7589773912679141416
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7589773912679141430}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 378833485ef4b48808760850e4feffd5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &7589773912831643913
 GameObject:
   m_ObjectHideFlags: 0
@@ -3611,10 +3351,9 @@ GameObject:
   - component: {fileID: 8966804695305660322}
   - component: {fileID: 7589773912831643918}
   - component: {fileID: 7589773912831643919}
-  - component: {fileID: 7589773912831643907}
   m_Layer: 0
   m_Name: Puzzle_11
-  m_TagString: Untagged
+  m_TagString: LabyrinthPart
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3707,18 +3446,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.48999998, y: 0.48999998, z: 0.099999994}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &7589773912831643907
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7589773912831643913}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 378833485ef4b48808760850e4feffd5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &7589773912837929406
 GameObject:
   m_ObjectHideFlags: 0
@@ -3732,10 +3459,9 @@ GameObject:
   - component: {fileID: 7027871802671042435}
   - component: {fileID: 7589773912837929395}
   - component: {fileID: 7589773912837929404}
-  - component: {fileID: 7589773912837929392}
   m_Layer: 0
   m_Name: Puzzle_40
-  m_TagString: Untagged
+  m_TagString: LabyrinthPart
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3828,18 +3554,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.48999998, y: 0.48999998, z: 0.099999994}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &7589773912837929392
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7589773912837929406}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 378833485ef4b48808760850e4feffd5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &7589773912850788527
 GameObject:
   m_ObjectHideFlags: 0
@@ -3853,10 +3567,9 @@ GameObject:
   - component: {fileID: 3073354666310610801}
   - component: {fileID: 7589773912850788524}
   - component: {fileID: 7589773912850788525}
-  - component: {fileID: 7589773912850788513}
   m_Layer: 0
   m_Name: Puzzle_13
-  m_TagString: Untagged
+  m_TagString: LabyrinthPart
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3949,18 +3662,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.48999998, y: 0.48999998, z: 0.099999994}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &7589773912850788513
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7589773912850788527}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 378833485ef4b48808760850e4feffd5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &7589773912869154458
 GameObject:
   m_ObjectHideFlags: 0
@@ -4121,10 +3822,9 @@ GameObject:
   - component: {fileID: 5981570465175884734}
   - component: {fileID: 7589773912929085566}
   - component: {fileID: 7589773912929085567}
-  - component: {fileID: 7589773912929085555}
   m_Layer: 0
   m_Name: Puzzle_2
-  m_TagString: Untagged
+  m_TagString: LabyrinthPart
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4217,18 +3917,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.48999998, y: 0.48999998, z: 0.099999994}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &7589773912929085555
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7589773912929085561}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 378833485ef4b48808760850e4feffd5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &7589773913048259166
 GameObject:
   m_ObjectHideFlags: 0
@@ -4242,10 +3930,9 @@ GameObject:
   - component: {fileID: 2201099916148950089}
   - component: {fileID: 7589773913048259155}
   - component: {fileID: 7589773913048259164}
-  - component: {fileID: 7589773913048259152}
   m_Layer: 0
   m_Name: Puzzle_29
-  m_TagString: Untagged
+  m_TagString: LabyrinthPart
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4338,18 +4025,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.48999998, y: 0.48999998, z: 0.099999994}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &7589773913048259152
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7589773913048259166}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 378833485ef4b48808760850e4feffd5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &7589773913066432954
 GameObject:
   m_ObjectHideFlags: 0
@@ -4363,10 +4038,9 @@ GameObject:
   - component: {fileID: 2251180723897283170}
   - component: {fileID: 7589773913066432959}
   - component: {fileID: 7589773913066432952}
-  - component: {fileID: 7589773913066432956}
   m_Layer: 0
   m_Name: Puzzle_3
-  m_TagString: Untagged
+  m_TagString: LabyrinthPart
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4459,18 +4133,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.48999998, y: 0.48999998, z: 0.099999994}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &7589773913066432956
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7589773913066432954}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 378833485ef4b48808760850e4feffd5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &7589773913141618920
 GameObject:
   m_ObjectHideFlags: 0
@@ -4484,10 +4146,9 @@ GameObject:
   - component: {fileID: 560626860754943811}
   - component: {fileID: 7589773913141618925}
   - component: {fileID: 7589773913141618926}
-  - component: {fileID: 7589773913141618914}
   m_Layer: 0
   m_Name: Puzzle_23
-  m_TagString: Untagged
+  m_TagString: LabyrinthPart
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4580,18 +4241,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.48999998, y: 0.48999998, z: 0.099999994}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &7589773913141618914
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7589773913141618920}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 378833485ef4b48808760850e4feffd5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &7589773913167554550
 GameObject:
   m_ObjectHideFlags: 0
@@ -4605,10 +4254,9 @@ GameObject:
   - component: {fileID: 376544750010589200}
   - component: {fileID: 7589773913167554539}
   - component: {fileID: 7589773913167554548}
-  - component: {fileID: 7589773913167554536}
   m_Layer: 0
   m_Name: Puzzle_12
-  m_TagString: Untagged
+  m_TagString: LabyrinthPart
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4701,18 +4349,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.48999998, y: 0.48999998, z: 0.099999994}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &7589773913167554536
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7589773913167554550}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 378833485ef4b48808760850e4feffd5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &7589773913221463298
 GameObject:
   m_ObjectHideFlags: 0
@@ -4726,12 +4362,9 @@ GameObject:
   - component: {fileID: 3194856517186212398}
   - component: {fileID: 7589773913221463303}
   - component: {fileID: 7589773913221463296}
-  - component: {fileID: 7589773913221463300}
-  - component: {fileID: 7589773913221463355}
-  - component: {fileID: 7589773913221463354}
   m_Layer: 0
   m_Name: Puzzle_43
-  m_TagString: Untagged
+  m_TagString: LabyrinthPart
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4824,42 +4457,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.48999998, y: 0.48999998, z: 0.099999994}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &7589773913221463300
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7589773913221463298}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 378833485ef4b48808760850e4feffd5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &7589773913221463355
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7589773913221463298}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 378833485ef4b48808760850e4feffd5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &7589773913221463354
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7589773913221463298}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 378833485ef4b48808760850e4feffd5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &7589773913329959858
 GameObject:
   m_ObjectHideFlags: 0
@@ -4873,10 +4470,9 @@ GameObject:
   - component: {fileID: 6271952275931981153}
   - component: {fileID: 7589773913329959863}
   - component: {fileID: 7589773913329959856}
-  - component: {fileID: 7589773913329959860}
   m_Layer: 0
   m_Name: Puzzle_14
-  m_TagString: Untagged
+  m_TagString: LabyrinthPart
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4969,18 +4565,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.48999998, y: 0.48999998, z: 0.099999994}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &7589773913329959860
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7589773913329959858}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 378833485ef4b48808760850e4feffd5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &7589773913372968586
 GameObject:
   m_ObjectHideFlags: 0
@@ -4994,10 +4578,9 @@ GameObject:
   - component: {fileID: 1469304054326623662}
   - component: {fileID: 7589773913372968591}
   - component: {fileID: 7589773913372968584}
-  - component: {fileID: 7589773913372968588}
   m_Layer: 0
   m_Name: Puzzle_31
-  m_TagString: Untagged
+  m_TagString: LabyrinthPart
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5090,18 +4673,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.48999998, y: 0.48999998, z: 0.099999994}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &7589773913372968588
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7589773913372968586}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 378833485ef4b48808760850e4feffd5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &7589773913402780599
 GameObject:
   m_ObjectHideFlags: 0
@@ -5115,10 +4686,9 @@ GameObject:
   - component: {fileID: 4882564192866649904}
   - component: {fileID: 7589773913402780596}
   - component: {fileID: 7589773913402780597}
-  - component: {fileID: 7589773913402780585}
   m_Layer: 0
   m_Name: Puzzle_32
-  m_TagString: Untagged
+  m_TagString: LabyrinthPart
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5211,18 +4781,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.48999998, y: 0.48999998, z: 0.099999994}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &7589773913402780585
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7589773913402780599}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 378833485ef4b48808760850e4feffd5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &7589773913564615258
 GameObject:
   m_ObjectHideFlags: 0
@@ -5236,10 +4794,9 @@ GameObject:
   - component: {fileID: 674216015090841559}
   - component: {fileID: 7589773913564615263}
   - component: {fileID: 7589773913564615256}
-  - component: {fileID: 7589773913564615260}
   m_Layer: 0
   m_Name: Puzzle_30
-  m_TagString: Untagged
+  m_TagString: LabyrinthPart
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5332,18 +4889,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.48999998, y: 0.48999998, z: 0.099999994}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &7589773913564615260
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7589773913564615258}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 378833485ef4b48808760850e4feffd5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &7869101627652941458
 GameObject:
   m_ObjectHideFlags: 0
@@ -5356,9 +4901,8 @@ GameObject:
   - component: {fileID: 1397310809675299152}
   - component: {fileID: 1000970568694255175}
   - component: {fileID: 7328620080933184610}
-  - component: {fileID: 4315123423384839926}
   m_Layer: 0
-  m_Name: labyrinthbubble1
+  m_Name: FirstBubble
   m_TagString: FirstBubble
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5448,18 +4992,6 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &4315123423384839926
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7869101627652941458}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a915309c5f8aa4f2cb7f2989b825a781, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &7942906328170091001
 GameObject:
   m_ObjectHideFlags: 0
@@ -5531,9 +5063,8 @@ GameObject:
   - component: {fileID: 2761788854441240067}
   - component: {fileID: 7581877905460217506}
   - component: {fileID: 8345042241649550831}
-  - component: {fileID: 5145572505433798440}
   m_Layer: 0
-  m_Name: labyrinthbubble9
+  m_Name: Bubble
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5611,18 +5142,6 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &5145572505433798440
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8366586440005354943}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a915309c5f8aa4f2cb7f2989b825a781, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &8461475430131993857
 GameObject:
   m_ObjectHideFlags: 0
@@ -5635,9 +5154,8 @@ GameObject:
   - component: {fileID: 1164783507435002291}
   - component: {fileID: 7613826424833280749}
   - component: {fileID: 8562315312326424414}
-  - component: {fileID: 7805224279399026170}
   m_Layer: 0
-  m_Name: labyrinthbubble4
+  m_Name: Bubble
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5715,18 +5233,6 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &7805224279399026170
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8461475430131993857}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a915309c5f8aa4f2cb7f2989b825a781, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &8660042022126115365
 GameObject:
   m_ObjectHideFlags: 0
@@ -5739,9 +5245,8 @@ GameObject:
   - component: {fileID: 9167397677556278130}
   - component: {fileID: 3567951839572307840}
   - component: {fileID: 9064609064840748364}
-  - component: {fileID: 4164028747172860508}
   m_Layer: 0
-  m_Name: labyrinthbubble12
+  m_Name: Bubble
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5819,18 +5324,6 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &4164028747172860508
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8660042022126115365}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a915309c5f8aa4f2cb7f2989b825a781, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &8739513439934272111
 GameObject:
   m_ObjectHideFlags: 0
@@ -5843,9 +5336,8 @@ GameObject:
   - component: {fileID: 5087967321004038683}
   - component: {fileID: 7454330472038542411}
   - component: {fileID: 7496849652490780494}
-  - component: {fileID: 1645413354296144896}
   m_Layer: 0
-  m_Name: labyrinthbubble10
+  m_Name: Bubble
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5923,18 +5415,6 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &1645413354296144896
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8739513439934272111}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a915309c5f8aa4f2cb7f2989b825a781, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &8956219882970191199
 GameObject:
   m_ObjectHideFlags: 0
@@ -5947,9 +5427,8 @@ GameObject:
   - component: {fileID: 191425807962312186}
   - component: {fileID: 3336202157756375748}
   - component: {fileID: 7172335814883206373}
-  - component: {fileID: 1426345089708700269}
   m_Layer: 0
-  m_Name: labyrinthbubble11
+  m_Name: Bubble
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6027,15 +5506,3 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &1426345089708700269
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8956219882970191199}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a915309c5f8aa4f2cb7f2989b825a781, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

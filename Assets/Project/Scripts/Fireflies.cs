@@ -11,6 +11,7 @@ public class Fireflies : Movable
     [SerializeField] private Transform initializeTo;
     [SerializeField] private Transform afterInitializeTarget;
     [SerializeField] private float seperationDistanceFactor = 0.8f;
+    [SerializeField] private Vector3 initOffset;
 
     // References
     private Animator animator;
@@ -65,7 +66,7 @@ public class Fireflies : Movable
         // Initialize to object
         if (initializeTo)
         {
-            transform.position = initializeTo.position;
+            transform.position = initializeTo.position + initOffset;
             SetAnimState(1);
             deactivateFirefly = true;
             initializeTo = null;
@@ -82,21 +83,7 @@ public class Fireflies : Movable
     {
         base.Update();
 
-        if (deactivateFirefly && !deactivateCollider.enabled)
-        {
-            foreach (Collider c in GetComponents<Collider>())
-            {
-                c.enabled = false;
-            }
-            deactivateCollider.enabled = true;
-        } else if (!deactivateFirefly && deactivateCollider.enabled)
-        {
-            foreach (Collider c in GetComponents<Collider>())
-            {
-                c.enabled = true;
-            }
-            deactivateCollider.enabled = false;
-        }
+        DeactivateColliders();
 
         if (bubbles != null)
         {
@@ -239,6 +226,26 @@ public class Fireflies : Movable
     private IEnumerator WaitForPoint()
     {
         yield return new WaitUntil(() => flyToNextPoint == true);
+    }
+
+    private void DeactivateColliders()
+    {
+        if (deactivateFirefly && !deactivateCollider.enabled)
+        {
+            foreach (Collider c in GetComponents<Collider>())
+            {
+                c.enabled = false;
+            }
+            deactivateCollider.enabled = true;
+        }
+        else if (!deactivateFirefly && deactivateCollider.enabled)
+        {
+            foreach (Collider c in GetComponents<Collider>())
+            {
+                c.enabled = true;
+            }
+            deactivateCollider.enabled = false;
+        }
     }
 
     // Move fireflies from lamp to player and size them to normal
