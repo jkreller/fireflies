@@ -72,8 +72,7 @@
     <Compile Include="Assets\Project\Scripts\Elevator\Elevator.cs" />
     <Compile Include="Assets\Project\Scripts\Elevator\ElevatorDoor.cs" />
     <Compile Include="Assets\Project\Scripts\Fireflies.cs" />
-    <Compile Include="Assets\Project\Scripts\FireFliesInteraction.cs" />
-    <Compile Include="Assets\Project\Scripts\FirstBubble.cs" />
+    <Compile Include="Assets\Project\Scripts\FirefliesInteraction.cs" />
     <Compile Include="Assets\Project\Scripts\Helper\FirefliesHelper.cs" />
     <Compile Include="Assets\Project\Scripts\LabyrinthInteraction.cs" />
     <Compile Include="Assets\Project\Scripts\LaserPointer.cs" />

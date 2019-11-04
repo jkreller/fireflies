@@ -181,20 +181,6 @@ public class Fireflies : Movable
         }
     }
 
-    public void pathFinding(List<GameObject> pathBubbles)
-    {
-
-        deactivateFirefly = true;
-        foreach (GameObject bubble in pathBubbles){
-            Debug.Log(bubble.gameObject.name);
-            StartMovement(bubble.transform.position);
-
-            StartCoroutine(WaitforPoint(bubble));
-
-        }
-
-    }
-
     private void OnTriggerStay(Collider other)
     {
         if (!deactivateFirefly)
