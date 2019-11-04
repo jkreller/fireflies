@@ -710,21 +710,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 947401895128697154, guid: 071583bc169949543a2f63145a489c60,
         type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -1.3165333
-      objectReference: {fileID: 0}
-    - target: {fileID: 947401895128697154, guid: 071583bc169949543a2f63145a489c60,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -32.53559
-      objectReference: {fileID: 0}
-    - target: {fileID: 947401895128697154, guid: 071583bc169949543a2f63145a489c60,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 3.2390196
-      objectReference: {fileID: 0}
-    - target: {fileID: 947401895128697154, guid: 071583bc169949543a2f63145a489c60,
-        type: 3}
       propertyPath: m_LocalRotation.x
       value: 0.28944242
       objectReference: {fileID: 0}
@@ -782,21 +767,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: ControllerLight
-      objectReference: {fileID: 0}
-    - target: {fileID: 947401895128697154, guid: 071583bc169949543a2f63145a489c60,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -1.3165333
-      objectReference: {fileID: 0}
-    - target: {fileID: 947401895128697154, guid: 071583bc169949543a2f63145a489c60,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -32.53559
-      objectReference: {fileID: 0}
-    - target: {fileID: 947401895128697154, guid: 071583bc169949543a2f63145a489c60,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 3.2390196
       objectReference: {fileID: 0}
     - target: {fileID: 947401895128697154, guid: 071583bc169949543a2f63145a489c60,
         type: 3}

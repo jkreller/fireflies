@@ -4,13 +4,13 @@ using UnityEngine;
 using UnityEngine.XR;
 using Valve.VR;
 
-public class FireFliesInteraction : ControllerComponent
+public class FirefliesInteraction : ControllerComponent
 {
     // References
     [SerializeField] private SteamVR_Action_Boolean grabPinchAction;
     [SerializeField] private Material glowingMaterial;
     [SerializeField] private Controller otherController;
-    private Fireflies fireflies;
+    private Fireflies firefliesHitted;
     private Light lightObject;
     private MeshRenderer[] meshRenderers;
     private Material[] oldMaterials;
@@ -18,13 +18,12 @@ public class FireFliesInteraction : ControllerComponent
     // Logic fields
     [System.NonSerialized] public bool moveWithMouse;
     [System.NonSerialized] public bool shouldFollow;
-    [SerializeField] private float minSeperationDragDistance = 0.5f;
+    [SerializeField] private float minSeperationDragDistance = 0.05f;
     private bool isGlowing;
-    private Vector3 seperatingStartPosition;
+    private Vector3? dragStartPosition;
 
     private void Awake()
     {
-        fireflies = GameObject.Find("Fireflies").GetComponent<Fireflies>();
         lightObject = GetComponentInChildren<Light>();
         if (lightObject)
         {
@@ -47,8 +46,8 @@ public class FireFliesInteraction : ControllerComponent
                     Glow(true);
                 }
 
-                // Logic for seperating
-                seperatingStartPosition = transform.position;
+                // Set start position of drag
+                dragStartPosition = transform.position;
             } else if (grabPinchAction.GetLastStateUp(handType))
             {
                 // Set that fireflies should not follow
@@ -60,14 +59,18 @@ public class FireFliesInteraction : ControllerComponent
                     Glow(false);
                 }
 
-                // Logic for seperating
-                if (seperatingStartPosition != null)
+                // Reset values of seperation
+                ResetDrag();
+            }
+
+            // Logic for seperating
+            if (dragStartPosition != null && firefliesHitted != null)
+            {
+                float dragDistance = Vector3.Distance(transform.position, (Vector3) dragStartPosition);
+                var allowed = FirefliesHelper.Instance.RequestSeperating(GetInstanceID(), firefliesHitted.GetInstanceID());
+                if (dragDistance > minSeperationDragDistance && allowed)
                 {
-                    float dragDistance = Vector3.Distance(transform.position, seperatingStartPosition);
-                    if (dragDistance > minSeperationDragDistance)
-                    {
-                        // Todo
-                    }
+                    firefliesHitted.Seperate();
                 }
             }
         } else if (moveWithMouse)
@@ -81,6 +84,16 @@ public class FireFliesInteraction : ControllerComponent
         }
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        Fireflies fireflies = other.gameObject.GetComponent<Fireflies>();
+        if (fireflies)
+        {
+            firefliesHitted = fireflies;
+        }
+    }
+
+    // Change controller material and add light for attracting and seperating
     private void Glow(bool turnOn)
     {
         if (turnOn)
@@ -94,10 +107,12 @@ public class FireFliesInteraction : ControllerComponent
                     oldMaterials[i] = meshRenderers[i].material;
                 }
             }
+
             foreach (MeshRenderer meshRenderer in meshRenderers)
             {
                 meshRenderer.material = glowingMaterial;
             }
+
             lightObject.enabled = true;
             isGlowing = true;
         } else
@@ -108,6 +123,15 @@ public class FireFliesInteraction : ControllerComponent
             }
             lightObject.enabled = false;
             isGlowing = false;
+        }
+    }
+
+    public void ResetDrag()
+    {
+        dragStartPosition = null;
+        if (firefliesHitted)
+        {
+            FirefliesHelper.Instance.ResetSeperationCount(firefliesHitted.GetInstanceID());
         }
     }
 }

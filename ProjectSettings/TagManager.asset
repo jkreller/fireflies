@@ -7,13 +7,11 @@ TagManager:
   - Fireflies
   - Elevator
   - AttractBall
-  - cage1
-  - cage2
   - Controller
   - snippet
   - labyrinth
   - FirstBubble
-  - Bubble
+  - LabyrinthPart
   layers:
   - Default
   - TransparentFX

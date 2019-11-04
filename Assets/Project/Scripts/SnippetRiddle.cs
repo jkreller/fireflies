@@ -25,7 +25,7 @@ public class SnippetRiddle : MonoBehaviour
                 snippet.GetComponent<MeshRenderer>().enabled = true;
             }
 
-            fireflies.Activate(GameObject.Find("Player").transform.position);
+            fireflies.ActivateAfterInitialize();
              
             Destroy(this.gameObject);
         }

@@ -49,11 +49,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05c7353f013444d508793fabdad74444, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 1
-  initializeToLamp: 1
-  firefliesSize: 0
-  deactivateFirefly: 0
-  flyToNextPoint: 0
+  movementSpeed: 10
+  minScale: 0
+  initializeTo: {fileID: 0}
+  seperationDistanceFactor: 0.8
 --- !u!199 &642662399527706004
 ParticleSystemRenderer:
   serializedVersion: 6
@@ -4807,8 +4806,8 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 1
-  m_Center: {x: 0.0021769998, y: -0.06023228, z: 0.06776213}
+  m_Radius: 0.79
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &642662399527706011
 Rigidbody:
   m_ObjectHideFlags: 0

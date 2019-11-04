@@ -7,50 +7,90 @@ public class Fireflies : Movable
 {
     // Options
     [Header("Fireflies Options")]
-    [SerializeField] private bool initializeToLamp = true;
-    public int firefliesSize;
+    [SerializeField] private float minScale; // one fourth of initial size, for example 0.5 if initial scale is 2
+    [SerializeField] private Transform initializeTo;
+    [SerializeField] private Transform afterInitializeTarget;
+    [SerializeField] private float seperationDistanceFactor = 0.8f;
 
     // References
     private Animator animator;
+    private GameObject player;
 
     // Logic fields
+    [System.NonSerialized] public bool flyToNextPoint = false;
+    [System.NonSerialized] public int firefliesCount;
     private float seperationDistance;
-    private static float minScale; // one fourth of initial size, for example 0.5 if initial scale is 2
     private bool isInitialFireflies;
     public bool deactivateFirefly;
-    public bool flyToNextPoint = false;
-    private List<GameObject> pathMakingObejcts;
+    private List<GameObject> pathMakingObejcts = new List<GameObject>();
     private SphereCollider deactivateCollider;
-
     private int currentBubbleIndex;
     private Transform[] bubbles;
-    //Fireflies follow
-    FireFliesInteraction fireFliesAttract;
+    private float avrgScale;
+    private FirefliesInteraction fireFliesAttract;
+    private List<FirefliesInteraction> firefliesInteractions = new List<FirefliesInteraction>();
 
-    new void Update()
+    private void Start()
+    {
+        animator = GetComponent<Animator>();
+        player = GameObject.FindGameObjectWithTag("Player");
+        foreach (GameObject controller in GameObject.FindGameObjectsWithTag("Controller"))
+        {
+            firefliesInteractions.Add(controller.GetComponent<FirefliesInteraction>());
+        }
+
+        SetAnimState(3);
+
+        avrgScale = (transform.localScale.x + transform.localScale.y + transform.localScale.z) / 3;
+
+        if (minScale == 0)
+        {
+            minScale = avrgScale / 4;
+        }
+
+        // Set how many fireflies should be present (fireflies count)
+        if (avrgScale == minScale * 4)
+        {
+            firefliesCount = 1;
+        }
+        else if (avrgScale == minScale * 2)
+        {
+            firefliesCount = 2;
+        }
+        else if (avrgScale == minScale)
+        {
+            firefliesCount = 4;
+        }
+
+        // Initialize to object
+        if (initializeTo)
+        {
+            transform.position = initializeTo.position;
+            SetAnimState(1);
+            deactivateFirefly = true;
+            initializeTo = null;
+        }
+
+        // Add collider for deactivated fireflies
+        deactivateCollider = gameObject.AddComponent<SphereCollider>();
+        deactivateCollider.radius = 0.1f;
+        deactivateCollider.isTrigger = true;
+        deactivateCollider.enabled = false;
+    }
+
+    private new void Update()
     {
         base.Update();
 
-        if (this.gameObject.transform.localScale.x < 0.6 && this.gameObject.transform.localScale.x > 0.16)
+        if (deactivateFirefly && !deactivateCollider.enabled)
         {
-            firefliesSize = 2;
-        }
-        else if(this.gameObject.transform.localScale.x > 0.4)
-        {
-            firefliesSize = 1;
-        }
-        else if (this.gameObject.transform.localScale.x < 0.2)
-        {
-            firefliesSize = 4;
-        }
-        if(deactivateFirefly){
             foreach (Collider c in GetComponents<Collider>())
             {
                 c.enabled = false;
-                }
+            }
             deactivateCollider.enabled = true;
-        }
-        else{
+        } else if (!deactivateFirefly && deactivateCollider.enabled)
+        {
             foreach (Collider c in GetComponents<Collider>())
             {
                 c.enabled = true;
@@ -58,7 +98,7 @@ public class Fireflies : Movable
             deactivateCollider.enabled = false;
         }
 
-        if (bubbles!=null)
+        if (bubbles != null)
         {
             if (currentBubbleIndex < bubbles.Length)
             {
@@ -68,54 +108,6 @@ public class Fireflies : Movable
             {
                 bubbles = null;
             }
-        }
-        print(bubbles);
-    }
-
-    void Start()
-    {
-        pathMakingObejcts = new List<GameObject>();
-
-        float avrgScale = (transform.localScale.x + transform.localScale.y + transform.localScale.z) / 3;
-
-        animator = GetComponent<Animator>();
-        SetAnimState(3);
-
-        seperationDistance = avrgScale;
-
-        // If is inital fireflies object
-        if (transform.name == "Fireflies")
-        {
-            isInitialFireflies = true;
-            minScale = avrgScale * 0.25f;
-        }
-
-        // Initialize to lamp
-        if (initializeToLamp && isInitialFireflies)
-        {
-            GameObject lamp = GameObject.Find("Lamp");
-            transform.position = lamp.transform.position + Vector3.up * 0.1f;
-            SetAnimState(1);
-        }
-
-        deactivateCollider = gameObject.AddComponent<SphereCollider>();
-        deactivateCollider.radius = 0.1f;
-        deactivateCollider.isTrigger = true;
-        deactivateCollider.enabled = false;
-
-        // Get AttractBall
-        //fireFliesAttractBall = GameObject.Find("AttractBall")?.GetComponent<FireFliesInteraction>();
-    }
-
-
-
-    void OnEnable()
-    {
-        // On first enable - logic for diabeling and enabeling because of elevator
-        if (initializeToLamp && isInitialFireflies)
-        {
-            SetAnimState(1);
-            initializeToLamp = false;
         }
     }
 
@@ -138,31 +130,32 @@ public class Fireflies : Movable
             // If is colliding with another fireflies object
             if (other.gameObject.CompareTag("Fireflies"))
             {
-                if (FirefliesMerger.Instance.RequestMerging())
+                if (FirefliesHelper.Instance.RequestMerging())
                 {
                     Merge(other.gameObject);
                 }
             }
+
             // go into cage1
             /*if (other.gameObject.CompareTag("cage1"))
                 {
-                if (firefliesSize == 2)
+                if (firefliesCount == 4)
                 {
-                    cageDoor cageDoor1 = GameObject.Find("CageDoor1").GetComponent<cageDoor>();
+                cageDoor cageDoor1 = GameObject.Find("CageDoor1").GetComponent<cageDoor>();
                     cageDoor1.closeCage = true;
 
                 }
                }
-            // go into cage2
-            if (other.gameObject.CompareTag("cage2"))
+            // Go into cage2
+            if (other.gameObject.CompareTag("Cage2"))
             {
-                if (firefliesSize == 2)
+                if (firefliesCount == 4)
                 {
                     pathMakingObejcts.Add(GameObject.Find("cage2point1"));
                     pathMakingObejcts.Add(GameObject.Find("cage2point2"));
                     pathMakingObejcts.Add(GameObject.Find("cage2point3"));
-                    pathFinding(pathMakingObejcts);
-                    cageDoor cageDoor2 = GameObject.Find("CageDoor2").GetComponent<cageDoor>();
+                    PathFinding(pathMakingObejcts);
+                    CageDoor cageDoor2 = GameObject.Find("CageDoor2").GetComponent<CageDoor>();
                     cageDoor2.closeCage = true;
                     deactivateFirefly = true;
                 }
@@ -202,11 +195,12 @@ public class Fireflies : Movable
 
     }
 
-    void OnTriggerStay(Collider other)
+    private void OnTriggerStay(Collider other)
     {
-        if (!deactivateFirefly) {
+        if (!deactivateFirefly)
+        {
             // Follow fire flies attract object
-            FireFliesInteraction fireFliesAttract = other.gameObject.GetComponent<FireFliesInteraction>();
+            FirefliesInteraction fireFliesAttract = other.gameObject.GetComponent<FirefliesInteraction>();
             if (fireFliesAttract && fireFliesAttract.shouldFollow)
             {
                 StartMovement(other.gameObject.transform.position);
@@ -214,44 +208,9 @@ public class Fireflies : Movable
         }
     }
 
-    IEnumerator WaitforPoint(GameObject bubble)
+    private void SetAnimState(int state)
     {
-        Debug.Log("test");
-        yield return new WaitUntil(() => flyToNextPoint == true);
-        flyToNextPoint = false;
-        Destroy(bubble);
-    }
-
-    // Seperate one fireflies object into two objects of half size
-    public void Seperate(Vector3 playerPosition)
-    {
-        if (!deactivateFirefly)
-        {
-            // Check if is big enough to seperate
-            if ((transform.localScale * 0.5f).sqrMagnitude >= (new Vector3(minScale, minScale, minScale)).sqrMagnitude)
-            {
-                Vector3 normalizedDirection = (playerPosition - transform.position).normalized;
-
-                Vector3 directionParts = Quaternion.AngleAxis(90, Vector3.up) * normalizedDirection * seperationDistance;
-
-                Vector3 posPart1 = transform.position + directionParts;
-                Vector3 posPart2 = transform.position - directionParts;
-
-                GameObject partObject = gameObject;
-                partObject.transform.localScale *= 0.5f;
-
-                Instantiate(partObject, posPart1, transform.rotation).GetComponent<Fireflies>();
-                Instantiate(partObject, posPart2, transform.rotation).GetComponent<Fireflies>();
-
-                Destroy(gameObject);
-            }
-        }
-    }
-
-    public void Activate(Vector3 playerPosition)
-    {
-        SetAnimState(2);
-        StartMovement(playerPosition + Vector3.back);
+        animator.SetInteger("AnimState", state);
     }
 
     // Merge fireflies together with another one into one fireflies object with double size
@@ -259,19 +218,89 @@ public class Fireflies : Movable
     {
         if (!deactivateFirefly)
         {
+            // Prepare merged fireflies object
             GameObject mergedObject = gameObject;
             mergedObject.transform.position = transform.position + (other.transform.position - transform.position) * 0.5f;
             mergedObject.transform.localScale = transform.localScale + other.transform.localScale;
 
+            // Reset drag of controllers because otherwise would instantly seperate fireflies again
+            foreach (FirefliesInteraction firefliesInteraction in firefliesInteractions)
+            {
+                firefliesInteraction.ResetDrag();
+            }
+
+            // Instantiate new fireflies object
             Instantiate(mergedObject);
 
+            // Destroy old fireflies object
             Destroy(gameObject);
             Destroy(other);
         }
     }
 
-    private void SetAnimState(int state)
+    private void PathFinding(List<GameObject> pathBubbles)
     {
-        animator.SetInteger("AnimState", state);
+        foreach (GameObject bubble in pathBubbles)
+        {
+            StartMovement(bubble.transform.position);
+            StartCoroutine(WaitForPoint());
+            flyToNextPoint = false;
+            Destroy(bubble);
+        }
+        deactivateFirefly = true;
+    }
+
+    private IEnumerator WaitForPoint()
+    {
+        yield return new WaitUntil(() => flyToNextPoint == true);
+    }
+
+    // Move fireflies from lamp to player and size them to normal
+    public void ActivateAfterInitialize()
+    {
+        SetAnimState(2);
+        if (afterInitializeTarget)
+        {
+            float oldMovementSpeed = movementSpeed;
+            movementSpeed = 1;
+            StartMovement(afterInitializeTarget.position, () => {
+                movementSpeed = oldMovementSpeed;
+                deactivateFirefly = false;
+                afterInitializeTarget = null;
+            });
+        }
+    }
+
+    // Seperate one fireflies object into two objects of half size
+    public void Seperate()
+    {
+        if (!deactivateFirefly)
+        {
+            // If is big enough to seperate
+            if (firefliesCount < 4)
+            {
+                // Get player position with height of fireflies and calculate direction vector between player and fireflies with length 1
+                Vector3 fixedPlayerPos = new Vector3(player.transform.position.x, transform.position.y, player.transform.position.z);
+                Vector3 normalizedDirection = (fixedPlayerPos - transform.position).normalized;
+
+                // Turn direction vector by 90 degrees around y-axis and scale by fireflies size
+                Vector3 directionParts = Quaternion.AngleAxis(90, Vector3.up) * normalizedDirection * avrgScale * seperationDistanceFactor;
+
+                // Calculate points for new fireflies objects
+                Vector3 posPart1 = transform.position + directionParts;
+                Vector3 posPart2 = transform.position - directionParts;
+
+                // Prepare new fireflies objects
+                GameObject partObject = gameObject;
+                partObject.transform.localScale *= 0.5f;
+
+                // Instantiate new fireflies objects
+                Instantiate(partObject, posPart1, transform.rotation);
+                Instantiate(partObject, posPart2, transform.rotation);
+
+                // Destroy old fireflies object
+                Destroy(gameObject);
+            }
+        }
     }
 }
