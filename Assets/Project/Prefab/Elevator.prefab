@@ -969,9 +969,39 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 608040929579383587, guid: 7dff3cc0b472f824492dcb3e1a7e82bf,
         type: 3}
+      propertyPath: onFirstPress.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 608040929579383587, guid: 7dff3cc0b472f824492dcb3e1a7e82bf,
+        type: 3}
       propertyPath: onPress.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 768698866764868074}
+    - target: {fileID: 608040929579383587, guid: 7dff3cc0b472f824492dcb3e1a7e82bf,
+        type: 3}
+      propertyPath: onFirstPress.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 768698866764868074}
+    - target: {fileID: 608040929579383587, guid: 7dff3cc0b472f824492dcb3e1a7e82bf,
+        type: 3}
+      propertyPath: onFirstPress.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OpenDoors
+      objectReference: {fileID: 0}
+    - target: {fileID: 608040929579383587, guid: 7dff3cc0b472f824492dcb3e1a7e82bf,
+        type: 3}
+      propertyPath: onFirstPress.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 608040929579383587, guid: 7dff3cc0b472f824492dcb3e1a7e82bf,
+        type: 3}
+      propertyPath: onFirstPress.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 608040929579383587, guid: 7dff3cc0b472f824492dcb3e1a7e82bf,
+        type: 3}
+      propertyPath: onFirstPress.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7dff3cc0b472f824492dcb3e1a7e82bf, type: 3}
 --- !u!4 &7121397272460144205 stripped

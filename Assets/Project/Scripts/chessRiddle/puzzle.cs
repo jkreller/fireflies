@@ -21,9 +21,7 @@ public class Puzzle : MonoBehaviour
 
     void OnMouseDrag()
     {
-        Debug.Log("bin drin");
         rb.AddRelativeForce(new Vector3(-Input.GetAxis("Mouse X") * 10,Input.GetAxis("Mouse Y") * 10,0));
-      
     }
 
  

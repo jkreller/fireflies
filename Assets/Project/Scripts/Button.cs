@@ -12,8 +12,8 @@ public class Button : MonoBehaviour
     }
 
     // Options
-    [SerializeField] private UnityEvent onPress = new UnityEvent();
-    [SerializeField] private UnityEvent onRelease = new UnityEvent();
+    [SerializeField] private UnityEvent onFirstPress = new UnityEvent();
+    [SerializeField] private UnityEvent onSecondPress = new UnityEvent();
     [SerializeField] private Axis axis = Axis.x;
     [SerializeField] private float pressDistance = 0.05f;
 
@@ -23,6 +23,7 @@ public class Button : MonoBehaviour
     private bool isPressed;
     private bool eventInvoked;
     private bool finishedPressing;
+    private bool isFirstPress = true;
 
     void Awake()
     {
@@ -89,7 +90,15 @@ public class Button : MonoBehaviour
             transform.position = Vector3.Lerp(transform.position, transform.position + axisVector, 0.01f);
         } else if (!eventInvoked)
         {
-            onPress.Invoke();
+            if (isFirstPress)
+            {
+                onFirstPress.Invoke();
+                isFirstPress = false;
+            } else
+            {
+                onSecondPress.Invoke();
+                isFirstPress = true;
+            }
             eventInvoked = true;
         }
     }
@@ -102,7 +111,6 @@ public class Button : MonoBehaviour
             transform.position = Vector3.Lerp(transform.position, transform.position - axisVector, 0.01f);
         } else
         {
-            onRelease.Invoke();
             finishedPressing = true;
         }
     }
