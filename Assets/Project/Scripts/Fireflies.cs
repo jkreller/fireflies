@@ -20,12 +20,15 @@ public class Fireflies : Movable
     [System.NonSerialized] public bool flyToNextPoint = false;
     [System.NonSerialized] public int firefliesCount;
     private float seperationDistance;
-    private bool deactivateFirefly;
+    private bool isInitialFireflies;
+    public bool deactivateFirefly;
     private List<GameObject> pathMakingObejcts = new List<GameObject>();
+    private SphereCollider deactivateCollider;
+    private int currentBubbleIndex;
+    private Transform[] bubbles;
     private float avrgScale;
     private FirefliesInteraction fireFliesAttract;
     private List<FirefliesInteraction> firefliesInteractions = new List<FirefliesInteraction>();
-    private bool collidersEnabled = true;
 
     private void Start()
     {
@@ -67,31 +70,61 @@ public class Fireflies : Movable
             deactivateFirefly = true;
             initializeTo = null;
         }
+
+        // Add collider for deactivated fireflies
+        deactivateCollider = gameObject.AddComponent<SphereCollider>();
+        deactivateCollider.radius = 0.1f;
+        deactivateCollider.isTrigger = true;
+        deactivateCollider.enabled = false;
     }
 
     private new void Update()
     {
         base.Update();
 
-        if (deactivateFirefly && collidersEnabled)
+        if (deactivateFirefly && !deactivateCollider.enabled)
         {
             foreach (Collider c in GetComponents<Collider>())
             {
                 c.enabled = false;
             }
-            collidersEnabled = false;
-        } else if (!deactivateFirefly && !collidersEnabled)
+            deactivateCollider.enabled = true;
+        } else if (!deactivateFirefly && deactivateCollider.enabled)
         {
             foreach (Collider c in GetComponents<Collider>())
             {
                 c.enabled = true;
             }
-            collidersEnabled = true;
+            deactivateCollider.enabled = false;
+        }
+
+        if (bubbles != null)
+        {
+            if (currentBubbleIndex < bubbles.Length)
+            {
+                StartMovement(bubbles[currentBubbleIndex].position);
+            }
+            else
+            {
+                bubbles = null;
+            }
         }
     }
 
     private void OnTriggerEnter(Collider other)
     {
+        if (other.gameObject.CompareTag("FirstBubble"))
+        {
+            deactivateFirefly = true;
+            bubbles = other.GetComponentsInChildren<Transform>();
+            currentBubbleIndex = 1;
+        }
+
+        if (bubbles != null && currentBubbleIndex < bubbles.Length && other.gameObject.name == bubbles[currentBubbleIndex].name)
+        {
+            currentBubbleIndex++;
+        }
+
         if (!deactivateFirefly)
         {
             // If is colliding with another fireflies object
@@ -102,17 +135,15 @@ public class Fireflies : Movable
                     Merge(other.gameObject);
                 }
             }
-            // Go into cage1
-            if (other.gameObject.CompareTag("Cage1"))
+
+            // go into cage1
+            /*if (other.gameObject.CompareTag("cage1"))
                 {
                 if (firefliesCount == 4)
                 {
-                    pathMakingObejcts.Add(GameObject.Find("cage1point1"));
-                    pathMakingObejcts.Add(GameObject.Find("cage1point2"));
-                    pathMakingObejcts.Add(GameObject.Find("cage1point3"));
-                    PathFinding(pathMakingObejcts);
-                    CageDoor cageDoor1 = GameObject.Find("CageDoor1").GetComponent<CageDoor>();
+                cageDoor cageDoor1 = GameObject.Find("CageDoor1").GetComponent<cageDoor>();
                     cageDoor1.closeCage = true;
+
                 }
                }
             // Go into cage2
@@ -126,8 +157,27 @@ public class Fireflies : Movable
                     PathFinding(pathMakingObejcts);
                     CageDoor cageDoor2 = GameObject.Find("CageDoor2").GetComponent<CageDoor>();
                     cageDoor2.closeCage = true;
+                    deactivateFirefly = true;
                 }
             }
+
+            if (other.gameObject.CompareTag("labyrinth"))
+            {
+                pathMakingObejcts.Add(GameObject.Find("labyrinthbubble2"));
+                pathMakingObejcts.Add(GameObject.Find("labyrinthbubble3"));
+                pathMakingObejcts.Add(GameObject.Find("labyrinthbubble4"));
+                pathMakingObejcts.Add(GameObject.Find("labyrinthbubble5"));
+                pathMakingObejcts.Add(GameObject.Find("labyrinthbubble6"));
+                pathMakingObejcts.Add(GameObject.Find("labyrinthbubble7"));
+                pathMakingObejcts.Add(GameObject.Find("labyrinthbubble8"));
+                pathMakingObejcts.Add(GameObject.Find("labyrinthbubble9"));
+                pathMakingObejcts.Add(GameObject.Find("labyrinthbubble10"));
+                pathMakingObejcts.Add(GameObject.Find("labyrinthbubble11"));
+                pathMakingObejcts.Add(GameObject.Find("labyrinthbubble12"));
+                pathMakingObejcts.Add(GameObject.Find("labyrinthbubble13"));
+               
+                pathFinding(pathMakingObejcts);
+            }*/
         }
     }
 

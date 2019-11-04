@@ -33,7 +33,7 @@ public class Movable : MonoBehaviour
 
     protected void Move()
     {
-        if (Vector3.SqrMagnitude(transform.position - targetPosition) > 0.01)
+        if (Vector3.SqrMagnitude(transform.position - targetPosition) > 0.00001)
         {
             transform.position = Vector3.Lerp(transform.position, targetPosition, movementSpeed * Time.deltaTime);
         }

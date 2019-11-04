@@ -270,7 +270,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 85d03ead3abc34839abce7b1ba801ab3, type: 3}
---- !u!43 &409640230
+--- !u!43 &562643718
 Mesh:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -500,6 +500,11 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  onRelease:
+    m_PersistentCalls:
+      m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
   axis: 1
@@ -1403,8 +1408,7 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: b96b93ef168f0344c9fdeecf7989aae6, type: 2}
-    m_RemovedComponents:
-    - {fileID: 3335368042783919398, guid: 4cffd3aa79397b44a840b6b8f0a61518, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4cffd3aa79397b44a840b6b8f0a61518, type: 3}
 --- !u!1 &891466254 stripped
 GameObject:
@@ -1427,7 +1431,7 @@ MonoBehaviour:
   grabGripAction:
     actionPath: /actions/default/in/GrabGrip
     needsReinit: 0
---- !u!21 &1757622285
+--- !u!21 &1532506962
 Material:
   serializedVersion: 6
   m_ObjectHideFlags: 0
@@ -1685,12 +1689,12 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 1757622285}
+      objectReference: {fileID: 1532506962}
     - target: {fileID: 3596050081820218999, guid: 64f3a375c825132469d2398f9f75ef92,
         type: 3}
       propertyPath: m_Mesh
       value: 
-      objectReference: {fileID: 409640230}
+      objectReference: {fileID: 562643718}
     - target: {fileID: 6095189380375087540, guid: 64f3a375c825132469d2398f9f75ef92,
         type: 3}
       propertyPath: minSeperationDragDistance

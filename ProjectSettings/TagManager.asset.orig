@@ -1,0 +1,59 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - Fireflies
+  - Elevator
+  - AttractBall
+  - cage1
+  - cage2
+  - Controller
+<<<<<<< HEAD
+  - snippet
+  - labyrinth
+  - FirstBubble
+  - Bubble
+=======
+  - Cage1
+  - Cage2
+  - LabyrinthPart
+>>>>>>> 99046ca8c157ce87c6d634aa0686e1899093ffcd
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - 
+  - 
+  - Ambient-Light
+  - Teleportation
+  - Grabbing
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0

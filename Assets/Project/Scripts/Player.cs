@@ -54,7 +54,7 @@ public class Player : Movable
                             break;
                     }
                 }
-            } else if (Input.GetMouseButtonUp(0))
+            } else if (Input.GetMouseButtonUp(0) && attractBall)
             {
                 attractBall.moveWithMouse = false;
             }
