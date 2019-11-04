@@ -5,24 +5,29 @@ using UnityEngine;
 public class ChessComplete : MonoBehaviour
 {
     public bool[] snippetMatches = new bool[24];
+    public GameObject fly;
     private Fireflies fireflies;
     float timer;
+    public GameObject firstBubble;
+    private SphereCollider sphereCollider;
+ 
 
     int counter;
 
     private void Start()
     {
-        timer = 2;
+       fireflies = fly.GetComponent<Fireflies>();
+        timer = 3;
+        sphereCollider = firstBubble.GetComponent<SphereCollider>();
+        sphereCollider.enabled = false;
     }
 
     void Update()
     {
-
-         
         timer -= Time.deltaTime;
         if(timer <= 0)
         {
-            timer = 2;
+            timer = 3;
 
             counter = 0;
             for(int i = 0; i < 24; i++)
@@ -33,7 +38,10 @@ public class ChessComplete : MonoBehaviour
                 }
                 if (counter == 24)
                 {
-                    Debug.Log("zfu");
+                    print("gelöst und collider erscheint");
+                    sphereCollider.enabled = true;
+                    fireflies.ActivateAfterInitialize();
+                    //Destroy(this.gameObject);
                 }
             }
         }

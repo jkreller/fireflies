@@ -104,6 +104,7 @@ GameObject:
   - component: {fileID: 1916939638645038922}
   - component: {fileID: 961811493823354431}
   - component: {fileID: 7411627938269429769}
+  - component: {fileID: 4624675729838241733}
   m_Layer: 0
   m_Name: FirstBubble
   m_TagString: FirstBubble
@@ -185,6 +186,19 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &4624675729838241733
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3427218483519217286}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d40c45a46f82424db4df884f1bd01e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  size: 4
 --- !u!1 &5503747672526694103
 GameObject:
   m_ObjectHideFlags: 0
@@ -275,7 +289,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 877dfa5e5cde8458893dd8615882972e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  closeCage: 0
 --- !u!1 &6824860460320989568
 GameObject:
   m_ObjectHideFlags: 0
@@ -412,6 +425,7 @@ GameObject:
   - component: {fileID: 8091174214073598711}
   - component: {fileID: 8987481716770280740}
   - component: {fileID: 5484612616276745875}
+  - component: {fileID: 6121736312145232129}
   m_Layer: 0
   m_Name: Bubble3
   m_TagString: Untagged
@@ -491,3 +505,31 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &6121736312145232129
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7974728431063105722}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17702791dc75b48bcb0c23b5a515fe45, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onPathComplete:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 // Script for fireflies particle system
 public class Fireflies : Movable
@@ -13,6 +14,7 @@ public class Fireflies : Movable
     [SerializeField] private float seperationDistanceFactor = 0.8f;
     [SerializeField] private Vector3 initOffset;
 
+
     // References
     private Animator animator;
     private GameObject player;
@@ -22,7 +24,7 @@ public class Fireflies : Movable
     [System.NonSerialized] public int firefliesCount;
     private float seperationDistance;
     private bool isInitialFireflies;
-    public bool deactivateFirefly;
+    public bool deactivateFirefly { get; set; }
     private List<GameObject> pathMakingObejcts = new List<GameObject>();
     private SphereCollider deactivateCollider;
     private int currentBubbleIndex;
@@ -102,9 +104,14 @@ public class Fireflies : Movable
     {
         if (other.gameObject.CompareTag("FirstBubble"))
         {
-            deactivateFirefly = true;
-            bubbles = other.GetComponentsInChildren<Transform>();
-            currentBubbleIndex = 1;
+            FirstBubble firstBubble = other.gameObject.GetComponent<FirstBubble>();
+            print(firefliesCount);
+            if (firstBubble.size == firefliesCount)
+            { 
+                deactivateFirefly = true;
+                bubbles = other.GetComponentsInChildren<Transform>();
+                currentBubbleIndex = 1;
+            }
         }
 
         if (bubbles != null && currentBubbleIndex < bubbles.Length && other.gameObject.name == bubbles[currentBubbleIndex].name)
@@ -209,23 +216,6 @@ public class Fireflies : Movable
             Destroy(gameObject);
             Destroy(other);
         }
-    }
-
-    private void PathFinding(List<GameObject> pathBubbles)
-    {
-        foreach (GameObject bubble in pathBubbles)
-        {
-            StartMovement(bubble.transform.position);
-            StartCoroutine(WaitForPoint());
-            flyToNextPoint = false;
-            Destroy(bubble);
-        }
-        deactivateFirefly = true;
-    }
-
-    private IEnumerator WaitForPoint()
-    {
-        yield return new WaitUntil(() => flyToNextPoint == true);
     }
 
     private void DeactivateColliders()

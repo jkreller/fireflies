@@ -4,16 +4,13 @@ using UnityEngine;
 
 public class CageDoor : MonoBehaviour
 {
-    public bool closeCage = false;
 
-    // Update is called once per frame
-    void Update()
+    public void closCage()
     {
-    if(closeCage){
-        if (transform.eulerAngles.y >= 15)
+       
+        while (transform.eulerAngles.y >= 12)
         {
             transform.Rotate(0, -50 * Time.deltaTime, 0);
         }
-       }
     }
 }

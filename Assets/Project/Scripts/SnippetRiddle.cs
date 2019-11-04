@@ -6,7 +6,8 @@ public class SnippetRiddle : MonoBehaviour
 {
     public bool[] snippetMatches = new bool[3];
     private Fireflies fireflies;
-    public GameObject[] combinedSnippets ;
+    public GameObject[] combinedSnippets;
+
 
 	private void Start()
 	{
