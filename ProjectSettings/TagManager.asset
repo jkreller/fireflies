@@ -10,6 +10,10 @@ TagManager:
   - cage1
   - cage2
   - Controller
+  - snippet
+  - labyrinth
+  - FirstBubble
+  - Bubble
   layers:
   - Default
   - TransparentFX

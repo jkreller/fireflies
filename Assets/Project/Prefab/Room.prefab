@@ -447,6 +447,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fireflies
       objectReference: {fileID: 0}
+    - target: {fileID: 642662399527706014, guid: e84bb6f08dd4c4d4ea55a4a3d5056691,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 642662399527706009, guid: e84bb6f08dd4c4d4ea55a4a3d5056691,
         type: 3}
       propertyPath: m_LocalPosition.x

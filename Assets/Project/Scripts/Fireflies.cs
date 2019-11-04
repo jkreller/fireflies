@@ -20,7 +20,10 @@ public class Fireflies : Movable
     public bool deactivateFirefly;
     public bool flyToNextPoint = false;
     private List<GameObject> pathMakingObejcts;
+    private SphereCollider deactivateCollider;
 
+    private int currentBubbleIndex;
+    private Transform[] bubbles;
     //Fireflies follow
     FireFliesInteraction fireFliesAttract;
 
@@ -44,8 +47,29 @@ public class Fireflies : Movable
             foreach (Collider c in GetComponents<Collider>())
             {
                 c.enabled = false;
+                }
+            deactivateCollider.enabled = true;
+        }
+        else{
+            foreach (Collider c in GetComponents<Collider>())
+            {
+                c.enabled = true;
+            }
+            deactivateCollider.enabled = false;
+        }
+
+        if (bubbles!=null)
+        {
+            if (currentBubbleIndex < bubbles.Length)
+            {
+                StartMovement(bubbles[currentBubbleIndex].position);
+            }
+            else
+            {
+                bubbles = null;
             }
         }
+        print(bubbles);
     }
 
     void Start()
@@ -74,6 +98,11 @@ public class Fireflies : Movable
             SetAnimState(1);
         }
 
+        deactivateCollider = gameObject.AddComponent<SphereCollider>();
+        deactivateCollider.radius = 0.1f;
+        deactivateCollider.isTrigger = true;
+        deactivateCollider.enabled = false;
+
         // Get AttractBall
         //fireFliesAttractBall = GameObject.Find("AttractBall")?.GetComponent<FireFliesInteraction>();
     }
@@ -92,6 +121,18 @@ public class Fireflies : Movable
 
     private void OnTriggerEnter(Collider other)
     {
+        if (other.gameObject.CompareTag("FirstBubble"))
+        {
+            deactivateFirefly = true;
+            bubbles = other.GetComponentsInChildren<Transform>();
+            currentBubbleIndex = 1;
+        }
+
+        if (bubbles != null && currentBubbleIndex < bubbles.Length && other.gameObject.name == bubbles[currentBubbleIndex].name)
+        {
+            currentBubbleIndex++;
+        }
+
         if (!deactivateFirefly)
         {
             // If is colliding with another fireflies object
@@ -103,16 +144,13 @@ public class Fireflies : Movable
                 }
             }
             // go into cage1
-            if (other.gameObject.CompareTag("cage1"))
+            /*if (other.gameObject.CompareTag("cage1"))
                 {
                 if (firefliesSize == 2)
                 {
-                    pathMakingObejcts.Add(GameObject.Find("cage1point1"));
-                    pathMakingObejcts.Add(GameObject.Find("cage1point2"));
-                    pathMakingObejcts.Add(GameObject.Find("cage1point3"));
-                    pathFinding(pathMakingObejcts);
                     cageDoor cageDoor1 = GameObject.Find("CageDoor1").GetComponent<cageDoor>();
                     cageDoor1.closeCage = true;
+
                 }
                }
             // go into cage2
@@ -126,20 +164,42 @@ public class Fireflies : Movable
                     pathFinding(pathMakingObejcts);
                     cageDoor cageDoor2 = GameObject.Find("CageDoor2").GetComponent<cageDoor>();
                     cageDoor2.closeCage = true;
+                    deactivateFirefly = true;
                 }
             }
+
+            if (other.gameObject.CompareTag("labyrinth"))
+            {
+                pathMakingObejcts.Add(GameObject.Find("labyrinthbubble2"));
+                pathMakingObejcts.Add(GameObject.Find("labyrinthbubble3"));
+                pathMakingObejcts.Add(GameObject.Find("labyrinthbubble4"));
+                pathMakingObejcts.Add(GameObject.Find("labyrinthbubble5"));
+                pathMakingObejcts.Add(GameObject.Find("labyrinthbubble6"));
+                pathMakingObejcts.Add(GameObject.Find("labyrinthbubble7"));
+                pathMakingObejcts.Add(GameObject.Find("labyrinthbubble8"));
+                pathMakingObejcts.Add(GameObject.Find("labyrinthbubble9"));
+                pathMakingObejcts.Add(GameObject.Find("labyrinthbubble10"));
+                pathMakingObejcts.Add(GameObject.Find("labyrinthbubble11"));
+                pathMakingObejcts.Add(GameObject.Find("labyrinthbubble12"));
+                pathMakingObejcts.Add(GameObject.Find("labyrinthbubble13"));
+               
+                pathFinding(pathMakingObejcts);
+            }*/
         }
     }
 
-    private void pathFinding(List<GameObject> pathBubbles)
+    public void pathFinding(List<GameObject> pathBubbles)
     {
-        foreach(GameObject bubble in pathBubbles){
-            StartMovement(bubble.transform.position);
-            StartCoroutine(WaitforPoint());
-            flyToNextPoint = false;
-            Destroy(bubble);
-        }
+
         deactivateFirefly = true;
+        foreach (GameObject bubble in pathBubbles){
+            Debug.Log(bubble.gameObject.name);
+            StartMovement(bubble.transform.position);
+
+            StartCoroutine(WaitforPoint(bubble));
+
+        }
+
     }
 
     void OnTriggerStay(Collider other)
@@ -154,9 +214,12 @@ public class Fireflies : Movable
         }
     }
 
-    IEnumerator WaitforPoint()
+    IEnumerator WaitforPoint(GameObject bubble)
     {
+        Debug.Log("test");
         yield return new WaitUntil(() => flyToNextPoint == true);
+        flyToNextPoint = false;
+        Destroy(bubble);
     }
 
     // Seperate one fireflies object into two objects of half size

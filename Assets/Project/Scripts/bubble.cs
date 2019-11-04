@@ -22,6 +22,7 @@ public class bubble : MonoBehaviour
             // If is colliding with another fireflies object
             if (other.gameObject.CompareTag("Fireflies"))
         {
+            Debug.Log(this.gameObject.name+"durch die bubble bin ich geflogen");
                 fireflies = other.gameObject.GetComponent<Fireflies>();
                 fireflies.flyToNextPoint = true;
             }
