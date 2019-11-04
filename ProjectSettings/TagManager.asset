@@ -9,13 +9,9 @@ TagManager:
   - AttractBall
   - Controller
   - snippet
-  - labyrinth
   - FirstBubble
   - LabyrinthPart
-  - Cage2
-  - Cage1
-  - cage1
-  - Bubble
+  - Letters
   layers:
   - Default
   - TransparentFX

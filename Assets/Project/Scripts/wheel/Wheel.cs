@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class Wheel : MonoBehaviour
 {
-    public bool stopRoll;
+    [System.NonSerialized] public bool stopRoll = true;
+    [System.NonSerialized] public bool isActive;
     private WheelRiddle wheelRiddle;
     private bool setWheelCorrect = false;
 
@@ -31,6 +32,9 @@ public class Wheel : MonoBehaviour
 
     public void ToggleRoll()
     {
-        stopRoll = !stopRoll;
+        if (isActive)
+        {
+            stopRoll = !stopRoll;
+        }
     }
 }

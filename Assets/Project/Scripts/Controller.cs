@@ -10,8 +10,8 @@ public class Controller : ControllerComponent
     [SerializeField] private SteamVR_Action_Boolean grabGripAction;
 
     // Logic fields
+    [System.NonSerialized] public GameObject objectInHand;
     private GameObject collidingObject;
-    private GameObject objectInHand;
     private Vector3? dragStartPosition;
 
     void Update()
@@ -73,7 +73,7 @@ public class Controller : ControllerComponent
         return fj;
     }
 
-    private void ReleaseObject()
+    public void ReleaseObject()
     {
         if (GetComponent<FixedJoint>())
         {
