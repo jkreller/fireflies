@@ -7,6 +7,7 @@ public class LettersChecker : MonoBehaviour
     // References
     private SolutionField[] solutionFields;
     private Wheel[] wheels;
+    private bool wheelsStopped;
 
     // Logic
     private bool[] solutionFieldsStatus;
@@ -16,6 +17,10 @@ public class LettersChecker : MonoBehaviour
         solutionFields = GetComponentsInChildren<SolutionField>();
         solutionFieldsStatus = new bool[solutionFields.Length];
         wheels = GameObject.Find("FortuneWheels").GetComponentsInChildren<Wheel>();
+        foreach (Wheel wheel in wheels)
+        {
+            wheel.enabled = false;
+        }
     }
 
     void Update()
@@ -29,13 +34,14 @@ public class LettersChecker : MonoBehaviour
             }
         }
 
-        if (isRightCount == solutionFields.Length)
+        if (!wheelsStopped && isRightCount == solutionFields.Length)
         {
             foreach (Wheel wheel in wheels)
             {
-                wheel.isActive = true;
+                wheel.enabled = true;
                 wheel.stopRoll = false;
             }
+            wheelsStopped = true;
         }
     }
 

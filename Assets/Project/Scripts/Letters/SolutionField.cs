@@ -5,7 +5,7 @@ using UnityEngine;
 public class SolutionField : MonoBehaviour
 {
     // Options
-    public int solutionPosition;
+    [System.NonSerialized] public int solutionPosition;
 
     // References
     private LettersChecker lettersChecker;

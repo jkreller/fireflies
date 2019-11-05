@@ -20,7 +20,7 @@ public class Button : MonoBehaviour
     // Logic fields
     private Vector3 endPoint;
     private Vector3 axisVector = Vector3.right;
-    public bool isPressed;
+    private bool isPressed;
     private bool eventInvoked;
     private bool finishedPressing;
     private bool isFirstPress = true;
@@ -93,7 +93,11 @@ public class Button : MonoBehaviour
             if (isFirstPress)
             {
                 onFirstPress.Invoke();
-                isFirstPress = false;
+
+                if (onSecondPress.GetPersistentEventCount() > 0)
+                {
+                    isFirstPress = false;
+                }
             } else
             {
                 onSecondPress.Invoke();

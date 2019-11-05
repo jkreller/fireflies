@@ -20,7 +20,8 @@ public class Elevator : MonoBehaviour
     // Logic fields
     private bool attachPlayer;
     private float playerOffsetY;
-    float yRotation = 5.0f;
+    private float yRotation = 5.0f;
+    private bool trackPlayerPosition;
 
     void Awake()
     {
@@ -49,12 +50,19 @@ public class Elevator : MonoBehaviour
             Vector3 playerPos = player.transform.position;
             player.transform.position = new Vector3(playerPos.x, transform.position.y + playerOffsetY, playerPos.z);
         }
+
+        if (trackPlayerPosition && Vector3.Distance(transform.position, player.transform.position) > 1.5f)
+        {
+            CloseDoors();
+            factoryCollider.enabled = false;
+            trackPlayerPosition = false;
+        }
     }
 
     private void OnTriggerEnter(Collider other)
     {
         // When player enters elevator
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Player") && !trackPlayerPosition)
         {
             CloseDoors();
             SetAnimState(1);
@@ -68,8 +76,7 @@ public class Elevator : MonoBehaviour
         // When player enters elevator
         if (other.CompareTag("Player"))
         {
-            CloseDoors();
-            factoryCollider.enabled = false;
+            trackPlayerPosition = true;
         }
     }
 
@@ -81,7 +88,7 @@ public class Elevator : MonoBehaviour
         }
         cabinCollider.isTrigger = false;
     }
-
+    
     public void CloseDoors()
     {
         foreach (ElevatorDoor elevatorDoor in elevatorDoors)
