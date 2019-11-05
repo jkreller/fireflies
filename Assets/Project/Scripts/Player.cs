@@ -15,6 +15,7 @@ public class Player : Movable
     private FirefliesInteraction attractBall;
 
     // Logic fields
+    [System.NonSerialized] public bool showFinishOverlay;
     private float rotationX;
     private float rotationY;
 

@@ -300,6 +300,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerOffsetZ: 1
   skipElevator: 0
+  finishText: {fileID: 21300000, guid: 210b27e82aae76f4da9f6b734a6cd5c2, type: 3}
 --- !u!95 &7019959100715437043
 Animator:
   serializedVersion: 3

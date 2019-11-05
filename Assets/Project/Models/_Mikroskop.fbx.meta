@@ -1,14 +1,9 @@
 fileFormatVersion: 2
-guid: 854a7f8a7b884bd4ba4c1d130284d216
+guid: 7306294c54f30024296a5c3aab3f2826
 ModelImporter:
   serializedVersion: 25
   internalIDToNameTable: []
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Ebene
-    second: {fileID: 2100000, guid: db3f334f26080a941b9fbadaad15e634, type: 2}
+  externalObjects: {}
   materials:
     importMaterials: 1
     materialName: 0

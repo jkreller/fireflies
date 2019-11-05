@@ -105,7 +105,7 @@ public class Fireflies : Movable
         if (other.gameObject.CompareTag("FirstBubble"))
         {
             FirstBubble firstBubble = other.gameObject.GetComponent<FirstBubble>();
-            print(firefliesCount);
+          
             if (firstBubble.size == firefliesCount)
             { 
                 deactivateFirefly = true;

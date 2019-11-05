@@ -20,7 +20,9 @@ public class WheelRiddle : MonoBehaviour
     {
         if (!hasOpenedElevator && riddle == 3)
         {
+            elevator.TurnLightOnWhenDown();
             elevator.OpenDoors();
+            elevator.roomFinished = true;
             hasOpenedElevator = true;
         }
     }

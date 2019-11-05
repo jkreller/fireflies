@@ -67,6 +67,7 @@
     <Compile Include="Assets\Project\Scripts\ChessRiddle\ChessComplete.cs" />
     <Compile Include="Assets\Project\Scripts\ChessRiddle\ChessPart.cs" />
     <Compile Include="Assets\Project\Scripts\ChessRiddle\Puzzle.cs" />
+    <Compile Include="Assets\Project\Scripts\ComingBackObject.cs" />
     <Compile Include="Assets\Project\Scripts\Controller.cs" />
     <Compile Include="Assets\Project\Scripts\ControllerComponent.cs" />
     <Compile Include="Assets\Project\Scripts\Elevator\Elevator.cs" />

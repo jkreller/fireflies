@@ -43,6 +43,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   solutionPosition: 1
   xOffsetLetters: 0.02
+--- !u!114 &836244675604101719
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1772300142945450580}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7d157f5e673d624d8ac6f02b1142bb4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxDistanceFromRoom: 10
 --- !u!1 &3691740677844226323
 GameObject:
   m_ObjectHideFlags: 0
@@ -178,6 +191,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   solutionPosition: 0
   xOffsetLetters: 0.02
+--- !u!114 &5294907038047006482
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5212170948953656342}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7d157f5e673d624d8ac6f02b1142bb4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxDistanceFromRoom: 10
 --- !u!54 &5316832080738488617
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -221,6 +247,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   solutionPosition: 2
   xOffsetLetters: 0.02
+--- !u!114 &1269146714265845352
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5219732838321934263}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7d157f5e673d624d8ac6f02b1142bb4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxDistanceFromRoom: 10
 --- !u!54 &3249382029543812969
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -264,6 +303,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   solutionPosition: 3
   xOffsetLetters: 0.02
+--- !u!114 &2109880455602614245
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7365107289713912248}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7d157f5e673d624d8ac6f02b1142bb4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxDistanceFromRoom: 10
 --- !u!1001 &5919767108281247522
 PrefabInstance:
   m_ObjectHideFlags: 0

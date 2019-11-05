@@ -10,18 +10,22 @@ public class Elevator : MonoBehaviour
     [SerializeField] private bool skipElevator;
 
     // References
+    [SerializeField] private GameObject finishText;
     private Animator animator;
     private Player player;
     private GameObject room;
     private Collider cabinCollider;
     private ElevatorDoor[] elevatorDoors;
     private Collider factoryCollider;
+    private Light[] lights;
 
     // Logic fields
+    [System.NonSerialized] public bool roomFinished;
     private bool attachPlayer;
     private float playerOffsetY;
     private float yRotation = 5.0f;
     private bool trackPlayerPosition;
+    private bool finishTextActivated;
 
     void Awake()
     {
@@ -29,6 +33,7 @@ public class Elevator : MonoBehaviour
         room = GameObject.Find("Room");
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
         elevatorDoors = GetComponentsInChildren<ElevatorDoor>();
+        lights = GetComponentsInChildren<Light>();
         cabinCollider = GameObject.Find("Cabin").GetComponent<Collider>();
         cabinCollider.isTrigger = true;
     }
@@ -55,6 +60,13 @@ public class Elevator : MonoBehaviour
         {
             CloseDoors();
             factoryCollider.enabled = false;
+
+            if (roomFinished && !finishTextActivated)
+            {
+                finishText.SetActive(true);
+                finishTextActivated = true;
+            }
+
             trackPlayerPosition = false;
         }
     }
@@ -65,15 +77,20 @@ public class Elevator : MonoBehaviour
         if (other.CompareTag("Player") && !trackPlayerPosition)
         {
             CloseDoors();
-            SetAnimState(1);
-            playerOffsetY = player.transform.position.y - transform.position.y;
             attachPlayer = true;
+            playerOffsetY = player.transform.position.y - transform.position.y;
+            if (roomFinished)
+            {
+                SetAnimState(3);
+            } else
+            {
+                SetAnimState(1);
+            }
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        // When player enters elevator
         if (other.CompareTag("Player"))
         {
             trackPlayerPosition = true;
@@ -86,7 +103,18 @@ public class Elevator : MonoBehaviour
         {
             elevatorDoor.Open();
         }
+
         cabinCollider.isTrigger = false;
+    }
+
+    public void TurnLightOnWhenDown()
+    {
+        SetAnimState(2);
+    }
+
+    public void EnableFactoryCollider()
+    {
+        factoryCollider.enabled = true;
     }
     
     public void CloseDoors()
