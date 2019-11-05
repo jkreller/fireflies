@@ -15,6 +15,7 @@ public class Elevator : MonoBehaviour
     private GameObject room;
     private Collider cabinCollider;
     private ElevatorDoor[] elevatorDoors;
+    private Collider factoryCollider;
 
     // Logic fields
     private bool attachPlayer;
@@ -37,6 +38,7 @@ public class Elevator : MonoBehaviour
         {
             player.transform.position = room.transform.position + Vector3.down * 1.5f;
         }
+        factoryCollider = GameObject.Find("Factory").GetComponent<Collider>();
     }
 
     void Update()
@@ -67,6 +69,7 @@ public class Elevator : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             CloseDoors();
+            factoryCollider.enabled = false;
         }
     }
 
