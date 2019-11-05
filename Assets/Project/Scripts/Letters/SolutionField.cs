@@ -5,11 +5,11 @@ using UnityEngine;
 public class SolutionField : MonoBehaviour
 {
     // Options
-    [System.NonSerialized] public int solutionPosition;
+    public int solutionPosition;
 
     // References
     private LettersChecker lettersChecker;
-    public GameObject letters;
+    [System.NonSerialized] public GameObject letters;
 
     private void Start()
     {

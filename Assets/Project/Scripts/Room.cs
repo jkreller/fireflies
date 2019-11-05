@@ -98,8 +98,9 @@ public class Room : MonoBehaviour
 
     public void chestSolve()
     {
+        
         chestSolved++;
-        if (cageSolved == 3)
+        if (chestSolved == 3)
         {
             riddleSolvedCount = 3;
             changeWorld = true;

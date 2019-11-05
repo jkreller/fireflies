@@ -92,7 +92,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   solutionPosition: 2
-  letters: {fileID: 0}
 --- !u!65 &1893645738889911328
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -198,7 +197,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   solutionPosition: 3
-  letters: {fileID: 0}
 --- !u!65 &8981438772172435924
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -304,7 +302,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   solutionPosition: 1
-  letters: {fileID: 0}
 --- !u!65 &8252356717106738615
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -410,7 +407,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   solutionPosition: 0
-  letters: {fileID: 0}
 --- !u!65 &6321630268482356513
 BoxCollider:
   m_ObjectHideFlags: 0

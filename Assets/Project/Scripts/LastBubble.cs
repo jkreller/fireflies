@@ -14,6 +14,7 @@ public class LastBubble : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Fireflies"))
         {
+            print("collison");
             firefly = other.gameObject.GetComponent<Fireflies>();
             onPathComplete.Invoke();
             
