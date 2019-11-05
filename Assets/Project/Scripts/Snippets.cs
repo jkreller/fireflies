@@ -27,9 +27,13 @@ public class Snippets : MonoBehaviour
 
     void OnTriggerStay(Collider other)
     {
-        inTrigger = true;
-        if(other.gameObject.name == objectToCollideWith){
-            snippetRiddle.snippetMatches[matchNumber] = true;
+        if (other.isTrigger)
+        {
+            inTrigger = true;
+            if (other.gameObject.name == objectToCollideWith)
+            {
+                snippetRiddle.snippetMatches[matchNumber] = true;
+            }
         }
      
 

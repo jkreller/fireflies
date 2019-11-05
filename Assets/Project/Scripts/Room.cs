@@ -14,13 +14,21 @@ public class Room : MonoBehaviour
     public GameObject chests;
     public GameObject lastBubbleCag1;
     public GameObject lastBubbleCage2;
+    public GameObject electricityBoxDoor;
+    public GameObject electricityBoxButton;
+    private Button buttonElectricityBox;
+    private Button buzzerbuttonScript;
+    public GameObject buzzerButton;
+    private int chestSolved;
+    public GameObject latticebar;
+    private LatticeBars latticeBarScript;
 
 
     void Start()
     {
-    riddleSolvedCount = 0;
+        riddleSolvedCount = 0;
   
-       chessFireFlies.SetActive(false);
+        chessFireFlies.SetActive(false);
         fireflies = chessFireFlies.GetComponent<Fireflies>();
         //chessFireFlies.GetComponent<Animator>().enabled = false;
 
@@ -30,7 +38,11 @@ public class Room : MonoBehaviour
         {
             boxCollider.enabled = false;
         }
-
+        buttonElectricityBox = electricityBoxButton.GetComponent<Button>();
+        buttonElectricityBox.enabled = false;
+        buzzerbuttonScript = buzzerButton.GetComponent<Button>();
+        buzzerbuttonScript.enabled = false;
+        latticeBarScript = latticebar.GetComponent<LatticeBars>();
     }
 
 
@@ -57,14 +69,19 @@ public class Room : MonoBehaviour
                 lastBubbleCag1.SetActive(true);
                 lastBubbleCage2.SetActive(true);
                 chests.SetActive(true);
+                buttonElectricityBox.enabled = true;
+                Vector3 to = new Vector3(120, 0, 0);
+                electricityBoxDoor.transform.eulerAngles = Vector3.Lerp(transform.rotation.eulerAngles, to, Time.deltaTime);
+                changeWorld = false;
 
             }
          
             // kisten befüllt
-            if(riddleSolvedCount == 4)
+            if(riddleSolvedCount == 3)
             {
-                //blauer knopf kann verwendet werden
-                //gitter geht auch
+                buzzerbuttonScript.enabled = true;
+                latticeBarScript.move = true;
+                changeWorld = false;
             }
         }
     }
@@ -75,6 +92,16 @@ public class Room : MonoBehaviour
         if(cageSolved == 2)
         {
             riddleSolvedCount = 1;
+            changeWorld = true;
+        }
+    }
+
+    public void chestSolve()
+    {
+        chestSolved++;
+        if (cageSolved == 3)
+        {
+            riddleSolvedCount = 3;
             changeWorld = true;
         }
     }

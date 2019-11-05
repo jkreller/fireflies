@@ -8,9 +8,9 @@ public class CageDoor : MonoBehaviour
     public void closCage()
     {
        
-        while (transform.eulerAngles.y >= 12)
+        while (transform.eulerAngles.y >= 1)
         {
-            transform.Rotate(0, -50 * Time.deltaTime, 0);
+            transform.Rotate(0, -5 * Time.deltaTime, 0);
         }
     }
 
@@ -19,7 +19,7 @@ public class CageDoor : MonoBehaviour
         while (transform.eulerAngles.y <= 90)
         {
             print(transform.eulerAngles.y);
-            transform.Rotate(0, 50 * Time.deltaTime, 0);
+            transform.Rotate(0, 5 * Time.deltaTime, 0);
         }
     }
 }
