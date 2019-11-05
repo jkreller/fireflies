@@ -14,7 +14,6 @@ public class Fireflies : Movable
     [SerializeField] private float seperationDistanceFactor = 0.8f;
     [SerializeField] private Vector3 initOffset;
 
-
     // References
     private Animator animator;
     private GameObject player;

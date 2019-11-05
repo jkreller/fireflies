@@ -31,7 +31,7 @@ public class Room : MonoBehaviour
     {
         riddleSolvedCount = 0;
 
-        chessFireFlies.SetActive(false);
+        //chessFireFlies.SetActive(false);
         fireflies = chessFireFlies.GetComponent<Fireflies>();
         //chessFireFlies.GetComponent<Animator>().enabled = false;
 
