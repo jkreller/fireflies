@@ -38,7 +38,6 @@ public class ChessComplete : MonoBehaviour
                 }
                 if (counter == 24)
                 {
-                    print("gelöst und collider erscheint");
                     sphereCollider.enabled = true;
                     fireflies.ActivateAfterInitialize();
                     //Destroy(this.gameObject);

@@ -15,7 +15,6 @@ public class LatticeBars : MonoBehaviour
             {
                 transform.Translate(Vector3.up * Time.deltaTime);
                 timer -= Time.deltaTime;
-                print(timer);
             }
             if (timer <= 0)
             {
