@@ -120,7 +120,7 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!43 &327048284
+--- !u!43 &176347989
 Mesh:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1669,12 +1669,12 @@ PrefabInstance:
     - target: {fileID: 7934010858873962361, guid: 4cffd3aa79397b44a840b6b8f0a61518,
         type: 3}
       propertyPath: m_Name
-      value: SnippetRiddle
+      value: SnippetRiddleOld
       objectReference: {fileID: 0}
     - target: {fileID: 7934010858873962361, guid: 4cffd3aa79397b44a840b6b8f0a61518,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3355480803937261189, guid: 4cffd3aa79397b44a840b6b8f0a61518,
         type: 3}
@@ -2301,7 +2301,7 @@ MonoBehaviour:
   grabGripAction:
     actionPath: /actions/default/in/GrabGrip
     needsReinit: 0
---- !u!21 &1121378174
+--- !u!21 &1268533603
 Material:
   serializedVersion: 6
   m_ObjectHideFlags: 0
@@ -2630,12 +2630,12 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 1121378174}
+      objectReference: {fileID: 1268533603}
     - target: {fileID: 3596050081820218999, guid: 64f3a375c825132469d2398f9f75ef92,
         type: 3}
       propertyPath: m_Mesh
       value: 
-      objectReference: {fileID: 327048284}
+      objectReference: {fileID: 176347989}
     - target: {fileID: 6095189380375087540, guid: 64f3a375c825132469d2398f9f75ef92,
         type: 3}
       propertyPath: minSeperationDragDistance

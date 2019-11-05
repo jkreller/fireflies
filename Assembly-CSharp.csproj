@@ -10,7 +10,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <RootNamespace></RootNamespace>
+    <RootNamespace>
+    </RootNamespace>
     <ProjectGuid>{8272F6F3-EB7C-6785-EED0-1F68EC7D8220}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
@@ -69,13 +70,11 @@
     <Compile Include="Assets\Project\Scripts\ChessRiddle\Puzzle.cs" />
     <Compile Include="Assets\Project\Scripts\Controller.cs" />
     <Compile Include="Assets\Project\Scripts\ControllerComponent.cs" />
-    <Compile Include="Assets\Project\Scripts\Door.cs" />
     <Compile Include="Assets\Project\Scripts\Elevator\Elevator.cs" />
     <Compile Include="Assets\Project\Scripts\Elevator\ElevatorDoor.cs" />
     <Compile Include="Assets\Project\Scripts\Fireflies.cs" />
     <Compile Include="Assets\Project\Scripts\FirefliesInteraction.cs" />
     <Compile Include="Assets\Project\Scripts\FirstBubble.cs" />
-    <Compile Include="Assets\Project\Scripts\GrabbableHandler.cs" />
     <Compile Include="Assets\Project\Scripts\Helper\FirefliesHelper.cs" />
     <Compile Include="Assets\Project\Scripts\LabyrinthInteraction.cs" />
     <Compile Include="Assets\Project\Scripts\LaserPointer.cs" />
