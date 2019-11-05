@@ -14,7 +14,7 @@ public class Room : MonoBehaviour
 
     void Start()
     {
-
+      
         changeWorld = true;
         riddleSolvedCount = 1;
   
