@@ -14,10 +14,11 @@ public class Room : MonoBehaviour
 
     void Start()
     {
-      
-        riddleSolvedCount = 0;
+
+        changeWorld = true;
+        riddleSolvedCount = 1;
   
-        chessFireFlies.SetActive(false);
+        //chessFireFlies.SetActive(false);
 
         colChildren = chessRiddle.GetComponentsInChildren<BoxCollider>();
         foreach(BoxCollider boxCollider in colChildren)

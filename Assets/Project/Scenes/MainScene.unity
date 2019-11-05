@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 1849711750}
-  m_IndirectSpecularColor: {r: 0.06811137, g: 0.077228524, b: 0.09687238, a: 1}
+  m_IndirectSpecularColor: {r: 0.06811143, g: 0.07722858, b: 0.09687247, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -373,6 +373,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 8058612436359885308, guid: 4cffd3aa79397b44a840b6b8f0a61518,
+        type: 3}
+      propertyPath: m_Name
+      value: Room
+      objectReference: {fileID: 0}
+    - target: {fileID: 8058612436359885308, guid: 4cffd3aa79397b44a840b6b8f0a61518,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8058612436359885308, guid: 4cffd3aa79397b44a840b6b8f0a61518,
+        type: 3}
+      propertyPath: m_Name
+      value: Room
+      objectReference: {fileID: 0}
+    - target: {fileID: 8058612436359885308, guid: 4cffd3aa79397b44a840b6b8f0a61518,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2917370413500274707, guid: 4cffd3aa79397b44a840b6b8f0a61518,
         type: 3}
       propertyPath: chessRiddle
@@ -442,26 +462,6 @@ PrefabInstance:
         type: 3}
       propertyPath: onPathComplete.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 8058612436359885308, guid: 4cffd3aa79397b44a840b6b8f0a61518,
-        type: 3}
-      propertyPath: m_Name
-      value: Room
-      objectReference: {fileID: 0}
-    - target: {fileID: 8058612436359885308, guid: 4cffd3aa79397b44a840b6b8f0a61518,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8058612436359885308, guid: 4cffd3aa79397b44a840b6b8f0a61518,
-        type: 3}
-      propertyPath: m_Name
-      value: Room
-      objectReference: {fileID: 0}
-    - target: {fileID: 8058612436359885308, guid: 4cffd3aa79397b44a840b6b8f0a61518,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5245088372423062910, guid: 4cffd3aa79397b44a840b6b8f0a61518,
         type: 3}
@@ -1928,6 +1928,41 @@ PrefabInstance:
       propertyPath: m_Radius
       value: 1.77
       objectReference: {fileID: 0}
+    - target: {fileID: 1198258195839763934, guid: 4cffd3aa79397b44a840b6b8f0a61518,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.304
+      objectReference: {fileID: 0}
+    - target: {fileID: 1198258195839763934, guid: 4cffd3aa79397b44a840b6b8f0a61518,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.067
+      objectReference: {fileID: 0}
+    - target: {fileID: 1358295315617830420, guid: 4cffd3aa79397b44a840b6b8f0a61518,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -5.474
+      objectReference: {fileID: 0}
+    - target: {fileID: 1358295315617830420, guid: 4cffd3aa79397b44a840b6b8f0a61518,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -2.806
+      objectReference: {fileID: 0}
+    - target: {fileID: 1358295315617830420, guid: 4cffd3aa79397b44a840b6b8f0a61518,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.495
+      objectReference: {fileID: 0}
+    - target: {fileID: 1831114374082263534, guid: 4cffd3aa79397b44a840b6b8f0a61518,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6175926893432365587, guid: 4cffd3aa79397b44a840b6b8f0a61518,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -9.28
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4cffd3aa79397b44a840b6b8f0a61518, type: 3}
 --- !u!1 &860757067 stripped
@@ -1963,13 +1998,7 @@ MonoBehaviour:
   grabGripAction:
     actionPath: /actions/default/in/GrabGrip
     needsReinit: 0
---- !u!1 &1372774245 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4297215420239827483, guid: 4cffd3aa79397b44a840b6b8f0a61518,
-    type: 3}
-  m_PrefabInstance: {fileID: 860757066}
-  m_PrefabAsset: {fileID: 0}
---- !u!21 &1510310269
+--- !u!21 &1158840888
 Material:
   serializedVersion: 6
   m_ObjectHideFlags: 0
@@ -2003,7 +2032,7 @@ Material:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _Flip: {r: 1, g: 1, b: 1, a: 1}
     - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
---- !u!43 &1768309431
+--- !u!43 &1315278963
 Mesh:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2166,6 +2195,12 @@ Mesh:
     offset: 0
     size: 0
     path: 
+--- !u!1 &1372774245 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4297215420239827483, guid: 4cffd3aa79397b44a840b6b8f0a61518,
+    type: 3}
+  m_PrefabInstance: {fileID: 860757066}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1849711749
 GameObject:
   m_ObjectHideFlags: 0
@@ -2408,12 +2443,12 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 1510310269}
+      objectReference: {fileID: 1158840888}
     - target: {fileID: 3596050081820218999, guid: 64f3a375c825132469d2398f9f75ef92,
         type: 3}
       propertyPath: m_Mesh
       value: 
-      objectReference: {fileID: 1768309431}
+      objectReference: {fileID: 1315278963}
     - target: {fileID: 6095189380375087540, guid: 64f3a375c825132469d2398f9f75ef92,
         type: 3}
       propertyPath: minSeperationDragDistance
