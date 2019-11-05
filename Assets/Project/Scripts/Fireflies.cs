@@ -188,7 +188,7 @@ public class Fireflies : Movable
         }
     }
 
-    private void SetAnimState(int state)
+    public void SetAnimState(int state)
     {
         animator.SetInteger("AnimState", state);
     }

@@ -5,6 +5,8 @@ using UnityEngine.Events;
 
 public class LastBubble : MonoBehaviour
 {
+    private Fireflies firefly;
+    public GameObject goal;
 
     [SerializeField] public UnityEvent onPathComplete = new UnityEvent();
 
@@ -12,10 +14,15 @@ public class LastBubble : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Fireflies"))
         {
-
+            firefly = other.gameObject.GetComponent<Fireflies>();
             onPathComplete.Invoke();
+            
         }
     }
 
-
+    public void activateFirefly()
+    {
+        firefly.StartMovement(goal.transform.position);
+        firefly.deactivateFirefly = false;
+    }
 }

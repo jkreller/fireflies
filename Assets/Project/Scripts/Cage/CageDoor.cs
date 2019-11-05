@@ -13,4 +13,13 @@ public class CageDoor : MonoBehaviour
             transform.Rotate(0, -50 * Time.deltaTime, 0);
         }
     }
+
+    public void openCage()
+    {
+        while (transform.eulerAngles.y <= 90)
+        {
+            print(transform.eulerAngles.y);
+            transform.Rotate(0, 50 * Time.deltaTime, 0);
+        }
+    }
 }

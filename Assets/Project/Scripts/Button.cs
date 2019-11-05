@@ -20,7 +20,7 @@ public class Button : MonoBehaviour
     // Logic fields
     private Vector3 endPoint;
     private Vector3 axisVector = Vector3.right;
-    private bool isPressed;
+    public bool isPressed;
     private bool eventInvoked;
     private bool finishedPressing;
     private bool isFirstPress = true;
