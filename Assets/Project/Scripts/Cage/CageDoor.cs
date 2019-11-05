@@ -4,13 +4,19 @@ using UnityEngine;
 
 public class CageDoor : MonoBehaviour
 {
+    AudioSource audioSource;
 
+    public void Start()
+    {
+        audioSource = this.GetComponent<AudioSource>();
+    }
     public void closCage()
     {
        
         while (transform.eulerAngles.y >= 1)
         {
             transform.Rotate(0, -5 * Time.deltaTime, 0);
+            audioSource.Play();
         }
     }
 
@@ -18,8 +24,8 @@ public class CageDoor : MonoBehaviour
     {
         while (transform.eulerAngles.y <= 90)
         {
-            print(transform.eulerAngles.y);
             transform.Rotate(0, 5 * Time.deltaTime, 0);
+            audioSource.Play();
         }
     }
 }

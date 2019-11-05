@@ -129,49 +129,6 @@ public class Fireflies : Movable
                     Merge(other.gameObject);
                 }
             }
-
-            // go into cage1
-            /*if (other.gameObject.CompareTag("cage1"))
-                {
-                if (firefliesCount == 4)
-                {
-                cageDoor cageDoor1 = GameObject.Find("CageDoor1").GetComponent<cageDoor>();
-                    cageDoor1.closeCage = true;
-
-                }
-               }
-            // Go into cage2
-            if (other.gameObject.CompareTag("Cage2"))
-            {
-                if (firefliesCount == 4)
-                {
-                    pathMakingObejcts.Add(GameObject.Find("cage2point1"));
-                    pathMakingObejcts.Add(GameObject.Find("cage2point2"));
-                    pathMakingObejcts.Add(GameObject.Find("cage2point3"));
-                    PathFinding(pathMakingObejcts);
-                    CageDoor cageDoor2 = GameObject.Find("CageDoor2").GetComponent<CageDoor>();
-                    cageDoor2.closeCage = true;
-                    deactivateFirefly = true;
-                }
-            }
-
-            if (other.gameObject.CompareTag("labyrinth"))
-            {
-                pathMakingObejcts.Add(GameObject.Find("labyrinthbubble2"));
-                pathMakingObejcts.Add(GameObject.Find("labyrinthbubble3"));
-                pathMakingObejcts.Add(GameObject.Find("labyrinthbubble4"));
-                pathMakingObejcts.Add(GameObject.Find("labyrinthbubble5"));
-                pathMakingObejcts.Add(GameObject.Find("labyrinthbubble6"));
-                pathMakingObejcts.Add(GameObject.Find("labyrinthbubble7"));
-                pathMakingObejcts.Add(GameObject.Find("labyrinthbubble8"));
-                pathMakingObejcts.Add(GameObject.Find("labyrinthbubble9"));
-                pathMakingObejcts.Add(GameObject.Find("labyrinthbubble10"));
-                pathMakingObejcts.Add(GameObject.Find("labyrinthbubble11"));
-                pathMakingObejcts.Add(GameObject.Find("labyrinthbubble12"));
-                pathMakingObejcts.Add(GameObject.Find("labyrinthbubble13"));
-               
-                pathFinding(pathMakingObejcts);
-            }*/
         }
     }
 

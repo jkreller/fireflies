@@ -22,12 +22,15 @@ public class Room : MonoBehaviour
     private int chestSolved;
     public GameObject latticebar;
     private LatticeBars latticeBarScript;
+    AudioSource audioSource;
+    public GameObject lampSound;
+  
 
 
     void Start()
     {
         riddleSolvedCount = 0;
-  
+
         chessFireFlies.SetActive(false);
         fireflies = chessFireFlies.GetComponent<Fireflies>();
         //chessFireFlies.GetComponent<Animator>().enabled = false;
@@ -52,9 +55,10 @@ public class Room : MonoBehaviour
         {
             // käfige befüllt
             if (riddleSolvedCount == 1)
-            { 
-            chessFireFlies.SetActive(true);
-                fireflies.SetAnimState(1);
+            {
+                audioSource = lampSound.GetComponent<AudioSource>();
+                audioSource.Play();
+                chessFireFlies.SetActive(true);
 
                 foreach (BoxCollider boxCollider in colChildren)
                 {
@@ -73,6 +77,8 @@ public class Room : MonoBehaviour
                 Vector3 to = new Vector3(120, 0, 0);
                 electricityBoxDoor.transform.eulerAngles = Vector3.Lerp(transform.rotation.eulerAngles, to, Time.deltaTime);
                 changeWorld = false;
+                audioSource = electricityBoxDoor.GetComponent<AudioSource>();
+                audioSource.Play();
 
             }
          

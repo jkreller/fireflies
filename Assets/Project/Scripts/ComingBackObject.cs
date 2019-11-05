@@ -23,10 +23,8 @@ public class ComingBackObject : MonoBehaviour
 
     void Update()
     {
-        print(Vector3.Distance(transform.position, room.position));
         if (Vector3.Distance(transform.position, room.position) > maxDistanceFromRoom)
         {
-            print(startPosition);
             rb.velocity = Vector3.zero;
             rb.angularVelocity = Vector3.zero;
             rb.useGravity = false;
