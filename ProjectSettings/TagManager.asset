@@ -12,6 +12,11 @@ TagManager:
   - FirstBubble
   - LabyrinthPart
   - Letters
+  - FxTemporaire
+  - projectile
+  - cage2
+  - cage1
+  - Bubble
   layers:
   - Default
   - TransparentFX
