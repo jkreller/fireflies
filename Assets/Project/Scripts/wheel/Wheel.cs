@@ -5,7 +5,6 @@ using UnityEngine;
 public class Wheel : MonoBehaviour
 {
     [System.NonSerialized] public bool stopRoll = true;
-    [System.NonSerialized] public bool isActive;
     private WheelRiddle wheelRiddle;
     private bool setWheelCorrect = false;
 
@@ -18,7 +17,7 @@ public class Wheel : MonoBehaviour
     {
         if (!stopRoll)
         {
-            transform.Rotate(Vector3.up, -250 * Time.deltaTime);
+            transform.Rotate(Vector3.up, -100 * Time.deltaTime);
         }
         if(!stopRoll && setWheelCorrect){
             setWheelCorrect = false;
@@ -32,9 +31,6 @@ public class Wheel : MonoBehaviour
 
     public void ToggleRoll()
     {
-        if (isActive)
-        {
-            stopRoll = !stopRoll;
-        }
+        stopRoll = !stopRoll;
     }
 }
