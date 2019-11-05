@@ -78,6 +78,9 @@
     <Compile Include="Assets\Project\Scripts\LabyrinthInteraction.cs" />
     <Compile Include="Assets\Project\Scripts\LaserPointer.cs" />
     <Compile Include="Assets\Project\Scripts\LastBubble.cs" />
+    <Compile Include="Assets\Project\Scripts\Letters\Letters.cs" />
+    <Compile Include="Assets\Project\Scripts\Letters\LettersChecker.cs" />
+    <Compile Include="Assets\Project\Scripts\Letters\SolutionField.cs" />
     <Compile Include="Assets\Project\Scripts\Movable.cs" />
     <Compile Include="Assets\Project\Scripts\Player.cs" />
     <Compile Include="Assets\Project\Scripts\Room.cs" />
