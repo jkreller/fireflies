@@ -18,6 +18,7 @@ public class ComingBackObject : MonoBehaviour
     {
         startPosition = transform.position;
         startRotation = transform.rotation;
+        rb = GetComponent<Rigidbody>();
         room = GameObject.Find("Room").transform;
     }
 
@@ -27,7 +28,10 @@ public class ComingBackObject : MonoBehaviour
         {
             rb.velocity = Vector3.zero;
             rb.angularVelocity = Vector3.zero;
-            rb.useGravity = false;
+            if (tag == "Letters")
+            {
+                rb.useGravity = false;
+            }
             transform.position = startPosition;
             transform.rotation = startRotation;
         }
