@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 
+// Script for letter puzzle which checks if all letters are right set
 public class LettersChecker : MonoBehaviour
 {
     // References
@@ -34,6 +35,7 @@ public class LettersChecker : MonoBehaviour
             }
         }
 
+        // If wheels didnt stopped yet and all solution fields are right
         if (!wheelsStopped && isRightCount == solutionFields.Length)
         {
             foreach (Wheel wheel in wheels)

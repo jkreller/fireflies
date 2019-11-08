@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
+// logic of all of the riddles to switch between 
 public class Room : MonoBehaviour
 {
     public GameObject chessFireFlies;
@@ -25,15 +27,11 @@ public class Room : MonoBehaviour
     AudioSource audioSource;
     public GameObject lampSound;
   
-
-
-    void Start()
+    private void Start()
     {
         riddleSolvedCount = 0;
 
-        //chessFireFlies.SetActive(false);
         fireflies = chessFireFlies.GetComponent<Fireflies>();
-        //chessFireFlies.GetComponent<Animator>().enabled = false;
 
         chests.SetActive(false);
         colChildren = chessRiddle.GetComponentsInChildren<BoxCollider>();
@@ -48,12 +46,11 @@ public class Room : MonoBehaviour
         latticeBarScript = latticebar.GetComponent<LatticeBars>();
     }
 
-
-    void Update()
+    private void Update()
     {
         if (changeWorld)
         {
-            // käfige befüllt
+            // cage is filled
             if (riddleSolvedCount == 1)
             {
                 audioSource = lampSound.GetComponent<AudioSource>();
@@ -66,7 +63,7 @@ public class Room : MonoBehaviour
                 }
                 changeWorld = false;
             }
-            // labyrinth gelöst
+            // labyrinth is solved
             if(riddleSolvedCount == 2)
             {
                 //sicherungskasten geht auf
@@ -82,7 +79,7 @@ public class Room : MonoBehaviour
 
             }
          
-            // kisten befüllt
+            // filled chest
             if(riddleSolvedCount == 3)
             {
                 buzzerbuttonScript.enabled = true;
@@ -104,7 +101,6 @@ public class Room : MonoBehaviour
 
     public void chestSolve()
     {
-        
         chestSolved++;
         if (chestSolved == 3)
         {

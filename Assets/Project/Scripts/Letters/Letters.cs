@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+// Script for each letters object
 public class Letters : MonoBehaviour
 {
     // Options
@@ -15,15 +16,16 @@ public class Letters : MonoBehaviour
     private bool snapToField;
     private SolutionField fieldToSnap;
 
-    void Start()
+    private void Start()
     {
         rb = GetComponent<Rigidbody>();
     }
 
-    void Update()
+    private void Update()
     {
         if (snapToField && fieldToSnap)
         {
+            // Snap to solution field
             transform.position = fieldToSnap.transform.position + Vector3.left * xOffsetLetters;
             Vector3 rotation = fieldToSnap.transform.rotation.eulerAngles;
             rotation.y = -rotation.y;
@@ -33,6 +35,7 @@ public class Letters : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        // If solution field is touched
         SolutionField solutionField = other.GetComponent<SolutionField>();
         if (solutionField && !solutionField.letters)
         {

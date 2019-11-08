@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+// start and stop wheel and check if it is correct
 public class Wheel : MonoBehaviour
 {
     [System.NonSerialized] public bool stopRoll = true;

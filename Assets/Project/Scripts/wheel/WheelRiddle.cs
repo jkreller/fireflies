@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+// finish wheel riddle and open door
 public class WheelRiddle : MonoBehaviour
 {
     // References

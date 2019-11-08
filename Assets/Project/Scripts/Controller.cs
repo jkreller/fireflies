@@ -14,7 +14,7 @@ public class Controller : ControllerComponent
     private GameObject collidingObject;
     private Vector3? dragStartPosition;
 
-    void Update()
+    private void Update()
     {
         if (grabGripAction.GetLastStateDown(handType))
         {

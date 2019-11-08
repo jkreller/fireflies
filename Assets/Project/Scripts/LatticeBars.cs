@@ -2,12 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+// open the latticbar
 public class LatticeBars : MonoBehaviour
 {
     public bool move;
     private float timer = 0.7f;
 
-    void Update()
+    private void Update()
     {
         if (move)
         {

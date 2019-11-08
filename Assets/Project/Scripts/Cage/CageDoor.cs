@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+// open and close cage doors
 public class CageDoor : MonoBehaviour
 {
     AudioSource audioSource;

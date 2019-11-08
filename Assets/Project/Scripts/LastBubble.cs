@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
+// last bubble trigger functions after getting into object with fireflys
 public class LastBubble : MonoBehaviour
 {
     private Fireflies firefly;

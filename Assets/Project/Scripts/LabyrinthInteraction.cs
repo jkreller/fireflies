@@ -3,6 +3,7 @@ using System.Collections;
 using UnityEngine.XR;
 using Valve.VR;
 
+// Script for interaction with labyrinth, added to controllers or AttractBall
 public class LabyrinthInteraction : ControllerComponent
 {
     // References

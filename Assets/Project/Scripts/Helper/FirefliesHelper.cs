@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
-// Singleton to handle merging of two fireflies objects
+// Singleton to handle merging ans seperating of two fireflies objects
 public sealed class FirefliesHelper
 {
     static FirefliesHelper() {}

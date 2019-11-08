@@ -25,7 +25,7 @@ public class Button : MonoBehaviour
     private bool finishedPressing;
     private bool isFirstPress = true;
 
-    void Awake()
+    private void Awake()
     {
         endPoint = transform.position;
         switch (axis)
@@ -84,16 +84,20 @@ public class Button : MonoBehaviour
 
     private void PressButton()
     {
+        // If didn't reach end
         if (Vector3.Distance(transform.position, endPoint) > 0.01f)
         {
             finishedPressing = false;
+            // Move button towards end
             transform.position = Vector3.Lerp(transform.position, transform.position + axisVector, 0.01f);
-        } else if (!eventInvoked)
+        } else if (!eventInvoked) // When didn't called event yet
         {
+            // If is first press
             if (isFirstPress)
             {
                 onFirstPress.Invoke();
 
+                // If second press is available then call next time second press
                 if (onSecondPress.GetPersistentEventCount() > 0)
                 {
                     isFirstPress = false;
@@ -110,8 +114,10 @@ public class Button : MonoBehaviour
     private void ReleaseButton()
     {
         eventInvoked = false;
+        // If didn't reach beginning again
         if (Vector3.Distance(transform.position, endPoint) < pressDistance)
         {
+            // Move button back to beginning
             transform.position = Vector3.Lerp(transform.position, transform.position - axisVector, 0.01f);
         } else
         {

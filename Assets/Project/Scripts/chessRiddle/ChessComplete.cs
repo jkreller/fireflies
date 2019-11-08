@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+// completing Labyrinth-Puzzle
 public class ChessComplete : MonoBehaviour
 {
     public bool[] snippetMatches = new bool[24];
@@ -10,8 +11,6 @@ public class ChessComplete : MonoBehaviour
     float timer;
     public GameObject firstBubble;
     private SphereCollider sphereCollider;
- 
-
     int counter;
 
     private void Start()
@@ -40,7 +39,7 @@ public class ChessComplete : MonoBehaviour
                 {
                     sphereCollider.enabled = true;
                     fireflies.ActivateAfterInitialize();
-                    //Destroy(this.gameObject);
+            
                 }
             }
         }

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+// collision and matching of Labyrinth-Parts
 public class ChessPart : MonoBehaviour
 {
     public GameObject puzzlePart;

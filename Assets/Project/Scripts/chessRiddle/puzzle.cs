@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+// mouse movement of Labyrinth-Part
 public class Puzzle : MonoBehaviour
 {
     Rigidbody rb;
@@ -9,14 +10,6 @@ public class Puzzle : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-    }
-
-    void Update()
-    {
-        
-        //Input.GetAxis("Mouse X") * 2
-        //Input.GetAxis("Mouse Y")*2
-
     }
 
     void OnMouseDrag()

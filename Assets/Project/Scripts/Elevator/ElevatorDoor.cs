@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+// Script for moving elevator doors
 public class ElevatorDoor : MonoBehaviour
 {
     private enum Side { left, right }
@@ -17,6 +18,7 @@ public class ElevatorDoor : MonoBehaviour
         switch (doorStatus)
         {
             case -1:
+                // For each side
                 switch (side)
                 {
                     case Side.left:
@@ -44,6 +46,7 @@ public class ElevatorDoor : MonoBehaviour
             case 1:
                 switch (side)
                 {
+                    // For each side
                     case Side.left:
                         if (transform.eulerAngles.y > 180 - openingAngle)
                         {

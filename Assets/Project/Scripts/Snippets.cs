@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+// class for the small snippets
 public class Snippets : MonoBehaviour
 {
     public string objectToCollideWith;
@@ -9,8 +10,8 @@ public class Snippets : MonoBehaviour
     SnippetRiddle snippetRiddle;
     private bool inTrigger = false;
 
-    // Start is called before the first frame update
-    void Start()
+ 
+    private void Start()
     {
         snippetRiddle = GameObject.Find("Snippets").GetComponent<SnippetRiddle>();
         
@@ -25,7 +26,7 @@ public class Snippets : MonoBehaviour
         inTrigger = false;
     }
 
-    void OnTriggerStay(Collider other)
+    private void OnTriggerStay(Collider other)
     {
         if (other.isTrigger)
         {

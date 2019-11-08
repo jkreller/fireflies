@@ -21,15 +21,11 @@ public class Fireflies : Movable
     // Logic fields
     [System.NonSerialized] public bool flyToNextPoint = false;
     [System.NonSerialized] public int firefliesCount;
-    private float seperationDistance;
-    private bool isInitialFireflies;
     public bool deactivateFirefly { get; set; }
-    private List<GameObject> pathMakingObejcts = new List<GameObject>();
     private SphereCollider deactivateCollider;
     private int currentBubbleIndex;
     private Transform[] bubbles;
     private float avrgScale;
-    private FirefliesInteraction fireFliesAttract;
     private List<FirefliesInteraction> firefliesInteractions = new List<FirefliesInteraction>();
 
     private void Start()
@@ -104,7 +100,8 @@ public class Fireflies : Movable
         if (other.gameObject.CompareTag("FirstBubble"))
         {
             FirstBubble firstBubble = other.gameObject.GetComponent<FirstBubble>();
-          
+
+            // If fireflies have right size
             if (firstBubble.size == firefliesCount)
             { 
                 deactivateFirefly = true;
@@ -113,6 +110,7 @@ public class Fireflies : Movable
             }
         }
 
+        // If reached next bubble
         if (bubbles != null && currentBubbleIndex < bubbles.Length && other.gameObject.name == bubbles[currentBubbleIndex].name)
         {
             currentBubbleIndex++;
@@ -135,7 +133,7 @@ public class Fireflies : Movable
     {
         if (!deactivateFirefly)
         {
-            // Follow fire flies attract object
+            // Follow fire flies attract object (AttractBall or controller)
             FirefliesInteraction fireFliesAttract = other.gameObject.GetComponent<FirefliesInteraction>();
             if (fireFliesAttract && fireFliesAttract.shouldFollow)
             {

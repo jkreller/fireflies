@@ -33,12 +33,14 @@ public class Movable : MonoBehaviour
 
     protected void Move()
     {
+        // If target point not reached yet
         if (Vector3.SqrMagnitude(transform.position - targetPosition) > 0.00001)
         {
             transform.position = Vector3.Lerp(transform.position, targetPosition, movementSpeed * Time.deltaTime);
         }
         else
         {
+            // Stop moving
             isMoving = false;
             if (movingCallBack != null)
             {

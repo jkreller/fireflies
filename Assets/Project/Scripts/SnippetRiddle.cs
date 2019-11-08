@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+// script for the snipetriddle on the table
 public class SnippetRiddle : MonoBehaviour
 {
     public bool[] snippetMatches = new bool[3];
@@ -14,7 +15,7 @@ public class SnippetRiddle : MonoBehaviour
         fireflies = GameObject.Find("Fireflies").GetComponent<Fireflies>();
 	}
 
-	void Update()
+	private void Update()
     {
         if(snippetMatches[0] && snippetMatches[1] && snippetMatches[2])
         {

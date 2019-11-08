@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.XR;
 using Valve.VR;
 
+// Script for interaction with fireflies (added to controllers or AttractionBall)
 public class FirefliesInteraction : ControllerComponent
 {
     // References
@@ -31,7 +32,7 @@ public class FirefliesInteraction : ControllerComponent
         }
     }
 
-    void Update()
+    private void Update()
     {
         if (XRDevice.isPresent)
         {
@@ -100,6 +101,7 @@ public class FirefliesInteraction : ControllerComponent
         {
             if (meshRenderers == null)
             {
+                // Save old materials
                 meshRenderers = GetComponentsInChildren<MeshRenderer>();
                 oldMaterials = new Material[meshRenderers.Length];
                 for (int i = 0; i < meshRenderers.Length; i++)
@@ -108,6 +110,7 @@ public class FirefliesInteraction : ControllerComponent
                 }
             }
 
+            // Change materials to glowing
             foreach (MeshRenderer meshRenderer in meshRenderers)
             {
                 meshRenderer.material = glowingMaterial;
@@ -117,6 +120,7 @@ public class FirefliesInteraction : ControllerComponent
             isGlowing = true;
         } else
         {
+            // Change materials to old ones
             for (int i = 0; i < meshRenderers.Length; i++)
             {
                 meshRenderers[i].material = oldMaterials[i];

@@ -34,11 +34,12 @@ public class LaserPointer : ControllerComponent
         headTransform = cameraRigTransform.Find("Camera").transform;
     }
 
-    void Update()
+    private void Update()
     {
         if (teleportAction.GetState(handType))
         {
             RaycastHit hit;
+            // If teleportation ray hits layer
             if (Physics.Raycast(controllerPose.transform.position, transform.forward, out hit, 100, teleportMask))
             {
                 hitPoint = hit.point;

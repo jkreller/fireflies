@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+// Script for solution fields of letter puzzle
 public class SolutionField : MonoBehaviour
 {
     // Options
